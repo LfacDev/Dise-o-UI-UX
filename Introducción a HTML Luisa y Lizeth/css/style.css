@@ -1,0 +1,425 @@
+/* PAGINA PERIODICO */
+*{
+    box-sizing: border-boX;
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background-color: #fffcfc !important;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    
+}
+.opcion{
+    list-style: none;
+    font-size: 0.8rem;
+    margin: 0 15px;
+    font-family: 'nyt-franklin', helvetica, arial, sans-serif;;
+}
+
+.superior{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px 40px;
+}
+
+.linkSuperior{
+    padding-left: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+}
+
+.medio{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+
+}
+
+.navar{
+    border-bottom: 4px double #000;
+    margin: 0 80px;
+}
+
+.fecha{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Titulo{
+    padding-right: 200px;
+    font-family: 'Chomsky', sans-serif;
+    font-size: 4rem;
+}
+
+.botonsus{
+    padding: 4px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color:#3e6fd0;
+    color: #ffff;
+}
+
+.flecha{
+    color: #000;
+}
+
+.botonlog{
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    background-color:#3e6fd0;
+    color: #ffff
+}
+
+.liveDatos{
+    display: flex;
+    justify-content: center;
+}
+
+.dato{
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;   
+}
+
+.LiveDato{
+    color: #de3b2e;
+    font-weight: bold;
+}
+
+.section2{
+    display: flex;
+}
+
+.noticia{
+    width: 65vh;
+    margin: 10px 40px;
+    
+}
+
+.noticiaflex{
+    display: flex;
+    
+}
+
+.rojo{
+    background-color: red;
+    padding: 1px 5px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.azul{
+    background-color: blue;
+    padding: 1px 5px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tituloNot{
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.textoNot{
+    font-size: 0.8rem;
+    padding: 6px 5px;
+    color: #8f8b8b;
+}
+
+hr{
+    margin: 0px 40px !important;
+}
+
+.imagen1{
+    padding-top: 10px;
+    width: 100vh;
+    height: 250px;
+    margin: 10px 0px;
+}
+
+.img1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+.leermas{
+    color: #524f4f;
+    font-size: .7rem;
+}
+
+.semanal{
+    display: flex;
+}
+
+.section3{
+    margin-top: 10px;
+}
+
+.spansem{
+    margin: 10px 0px 0px 30px;
+    padding: 10px  17px;
+    border-radius: 18px;
+    background-color: #3e6fd0;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.linea {
+    height: 2px;
+    width: 80%; 
+    background-color: #c2bfbf; 
+    margin-left: 10px; 
+    margin-top: 32px;
+}
+
+.titulo2{
+    margin-top: 10px;
+}
+
+.footerper{
+    margin-top: 40px;
+}
+
+.texto2{
+    margin-top: 10px;
+    color: #524e4e;
+}
+
+.s3div{
+    margin-right: 10px;
+}
+
+.section4{
+    margin-top: 60px;
+}
+
+.s4img{
+    left: 160px;
+    position: relative;
+}
+
+.aside1{
+    margin-top: 20px;
+    margin-left: 35px;
+    padding-top: 60px;
+    padding-left: 60px;
+    border-left: 1px solid;
+    box-shadow: #524f4f;
+}
+
+.img2{
+    width: 80%;
+    height: 60%;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+.section4{
+    margin-left: 100px !important;
+}
+
+.TituloFooter{
+    padding-right: 200px;
+    font-family: 'Chomsky', sans-serif;
+    font-size: 2rem;
+}
+
+.footerper{
+    padding-top: 5px;
+    border-top: 4px double;
+}
+
+/*PARTE LIZ*/
+
+*{ 
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*---------------------ESTILOS INDEX-------------------------*/
+.body-home{
+    background-color: rgb(232, 227, 221);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-index{
+    background-color: #1f246f; /*#131a7e*/
+    width: 100%; 
+    display: flex;
+}
+.list-nav{
+padding: 10px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+.nav-index a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+.logo{
+    color: bisque;
+    font-size: 20px;
+    align-items: start;
+    padding: 20px;
+    margin-right: 100px;
+    font-family: "Sixtyfour", sans-serif;
+
+}
+.nav-link:link{
+    color: white;
+}
+.nav-link:hover{
+    color: rgb(114, 140, 228);
+}
+.banner-index{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+.img-banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+.contenido-banner-index{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 2px;
+    color: #e0f1ff;
+    
+}
+.contenido-banner-index p{
+    font-size: 25px;
+    margin: 5px;
+}
+.explorar{
+    position: relative;
+    text-decoration: none;
+    background-color: #E0E2FF;
+    padding: 10px;
+    border-radius: 5px;
+    color: #131a7e;
+    top: 20px;
+    font-family: "Sixtyfour", sans-serif;
+}
+.container-conte{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    color: #131a7e;
+    text-align: center;
+}
+.index-conte1, .index-conte2, .index-conte3{
+    background-color: aliceblue;
+    width: 33%;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #131a7e;
+}
+.container-conte a{
+    background-color: #131a7e;
+    padding: 6px;
+    border-radius: 3px;
+    color: #E0E2FF;
+    font-family: "Sixtyfour", sans-serif;
+    font-size: 12px;
+
+}
+.container-conte a, p{
+    margin: 4px;
+    margin-top: 20px;
+}
+/*---------------------ESTILOS GALERIA-------------------------*/
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-auto-rows: 100px;
+    gap: 10px;
+    padding: 10px;
+}
+.grid-cell {
+    background-size: cover;
+    background-position: center;
+}
+.galery1{
+    background-image: url('../img/GaleriaIMG1.jpeg');
+    grid-row: span 2;
+}
+.galery2{
+    background-image: url('../img/GaleriaIMG2.png');
+    grid-row: span 3;
+}
+.galery3{
+    background-image: url('../img/GaleriaIMG3.jpg');
+    grid-row: span 2;
+}
+.galery4{
+    background-image: url('../img/GaleriaIMG4.jpeg');
+    grid-row: span 2;
+}
+.galery5{
+    background-image: url('../img/GaleriaIMG5.jpg');
+
+}
+.galery6{
+    background-image: url('../img/GaleriaIMG6.jpg');
+    grid-column: span 2;
+}
+.galery7{
+    background-image: url('../img/GaleriaIMG7.jpg');
+    grid-column: span 2;
+}
+
+/*---------------------ESTILOS PRIMERA PAGINA-------------------------*/
+.body-primera{
+background-color: rgb(231, 250, 255);
+}
+.container-foot{
+    width: 100%;
+    background-color: #131a7e;
+    margin-top: 8px;
+}
+.footer p{
+    color: #E0E2FF;
+}
+
+
+
+
+
