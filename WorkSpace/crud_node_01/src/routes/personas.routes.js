@@ -35,7 +35,10 @@ router.get('/edit/:id', async(req, res)=>{
         const {id} = req.params;
         const[persona] = await pool.query('SELECT personas.id ,personas.name, personas.lastname,personas.age, tipopersona.Nombre FROM personas INNER JOIN tipopersona on tipopersona.ID = personas.FK_tipopersona WHERE personas.id= ?', [id]);
         const personaEdit = persona[0];
-        res.render('personas/edit', {persona: personaEdit});
+
+        const[tipopersona] = await pool.query('Select * from tipopersona');
+
+        res.render('personas/edit', {persona: personaEdit,  tipopersona: tipopersona});
     } catch (err) {
         res.status(500).json({message:err.message});
     }

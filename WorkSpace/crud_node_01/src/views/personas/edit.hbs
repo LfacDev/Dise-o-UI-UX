@@ -20,12 +20,20 @@
                             <input class="form-control" type="number" name="age" id="age" value="{{persona.age}}" placeholder="0" required>
                         </div>
                         <div class="input-group mt-2">
-                            <select name="FK_tipopersona" class="form-select" aria-label="Default select example">
+                            {{!-- <select name="FK_tipopersona" class="form-select" aria-label="Default select example">
                                 <option selected>Tipo de Persona</option>
                                 <option value='1'>Administrativo</option>
                                 <option value='2'>Docente</option>
                                 <option value='3'>Estudiante</option>
-                            </select>
+                            </select> --}}
+                        <select id="tipoPersona" class="form-select" name="FK_tipopersona">
+                            <option value="{{persona.FK_tipopersona}}">{{persona.Nombre}} ✔</option>
+                            {{#each tipopersona}}
+                                <option value="{{this.ID}}" {{#eq this.ID ../persona.FK_tipopersona}}selected{{/eq}}>
+                                    {{this.Nombre}}
+                                </option>
+                            {{/each}}
+                        </select>
                         </div>
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-success">Actualizar</button>
