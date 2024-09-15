@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SeoulHangangCondensed';
+    src: url('../fonts/SeoulHangangCondensed-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body, .navbar-nav {
+    font-family: 'SeoulHangang CB', sans-serif;
+}
