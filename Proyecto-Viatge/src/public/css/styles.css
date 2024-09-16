@@ -285,59 +285,79 @@ body{
 
 .sec-cards-act{
     width: 100%;
-    height: 520px;
-    margin-top: 80px;
+    height: 350px;
+    margin-top: 30px;
 }
 
-.card{
+.card-act{
     width: 350px;
     height: 90%;
     margin: 30px;
     border-radius: 30px;
-    background-color: #E3EBF3;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.card-img{
-    width: 100%;
-    height: 60%;
-    
-}
-
-.img-card{
+.img-card-act{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card-text{
-    margin: 10px 15px;
-    font-weight: bold;
+.card-titulo-act{
+    font-size: 18px;
+    opacity: 0.5;    
 }
 
-.flex-card{
+.beneficios{
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.bene-card{
+    width: 300px;
+    height: 100px;
+    border: #F24A87 solid 2px;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+.flex-card-bene{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bene-img{
+    height: 100%;
+    height: 100px;
+    padding: 15px;
+}
+
+.bene-text{
+    font-size: 20px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* Footer */
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: #0B97B8;
+    margin-top: 50px;
     display: flex;
 }
 
-.card-titulo{
-    margin-left: 5px;
-    font-size: 15px;
-    
+.cont-footer{
+    width: 50%;
 }
 
-.cal-card{
-    background-color: #EAD29C;
-    padding: 5px;
-    border-radius: 10px;
-    font-weight:550;
-}
-
-.card-subtitulo{
-    font-size: 15px;
-    font-weight: bold;
-    align-content: center;
-    margin: auto;
+.text-footer{
+    color: #fff;
+    font-size: 20px;
 }
 
 
