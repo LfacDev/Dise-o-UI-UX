@@ -105,7 +105,7 @@ app.get('/run-task', async (req, res) => {
 
         // Pasar los parámetros al scraper
         const scrapedData = await BookingScraper(checkIn, checkOut, search, adultsCount, childrenCount, roomsCount);
-        res.render('/listHotel', { hotels: scrapedData });
+        res.render('personas/listHotel', { hotels: scrapedData });
          console.log(scrapedData);
     } catch (error) {
         console.error('Error running task:', error);  // Mostrar el error en la consola

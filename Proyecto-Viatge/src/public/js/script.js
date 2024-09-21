@@ -310,14 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cantidadHabitaciones = parseInt(contador2);
         console.log(cantidadHabitaciones);
         
-       
-        try {
-            const response = await fetch(`/run-task?checkIn=${fechaLlegada}&checkOut=${fechaSalida}&search=${nombreCiudad}&adults=${adultos}&children=${niños}&rooms=${cantidadHabitaciones}`);
-            const data = await response.json();
-            console.log(data); // Procesa los datos
-        } catch (error) {
-            console.error('Error al buscar hoteles:', error);
-        }
+        window.location.href = `/run-task?checkIn=${fechaLlegada}&checkOut=${fechaSalida}&search=${nombreCiudad}&adults=${adultos}&children=${niños}&rooms=${cantidadHabitaciones}`;
     });
 });
 
