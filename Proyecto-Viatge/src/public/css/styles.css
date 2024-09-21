@@ -39,14 +39,15 @@ body{
 
 .busqueda-item{
     margin: 12px;  
+    cursor: pointer;
 }
 
 .subtitulo-item{
     font-size: 17px;
-    padding-top: 10px;
+    padding: 10px;
     color: #00264D;
     font-weight: bold;
-    padding-right: 30px;
+    padding-right: 20px;
 }
 
 .titulo-item{
@@ -84,6 +85,7 @@ body{
     text-align: center;
     align-content: center;
     border-radius: 40px;
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -92,6 +94,58 @@ body{
     text-decoration: none;
     font-size: 20px;
 }
+
+
+/* DROPDOWN */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+ .dropdownBtn{
+    width: 200px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+ } 
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 300px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.icono-drop{
+    margin-right: 5px;
+}
+
+
+.datos-ciudad{
+    margin: 10px;
+}
+
+.dropdown-content span {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content span:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+.ciudad{
+    border-bottom: #00000071 1px solid;
+    border-radius: 10px;
+}
+
 
 .text-cards{
     width: 100%;
@@ -342,6 +396,153 @@ body{
     padding-top: 20px;
 }
 
+/* MODAL CALENDRIO */
+.modal {
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    left: 610px;
+    top: 310px;
+    width: 100vh;
+    height: 800px;
+    overflow: hidden;
+    
+  }
+  
+  .modal-contenido{
+    background-color: #fefefe;
+    margin: 30% auto; 
+    padding: 5px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .calendario{
+    width: 350px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  .calenHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .calenHeader button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .dias-sem {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+  }
+
+  .calenBody{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .calenDay{
+    border-radius:50%;
+    padding: 8px 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    margin: 2px;
+  }
+
+  .calenDay:hover{
+    background-color:#ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  .calenDay.selected{
+    border: 3px solid #f24a87;
+  }
+
+  .calenDay.range{
+    background-color: #0b97b8;
+  }
+
+  #prevbtn, #nextbtn{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin:0 10px 0 10px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  #prevbtn:hover{
+    background-color: #ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  #nextbtn:hover{
+    background-color: #ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  #FechaSeleccionada{
+    font-family: 'Poppins';
+  }
+
+  #mesActual{
+    font-family:'Poppins';
+    font-size:18px;
+  }
+
+  /* MODAL HUESPEDES */
+
+  .flex-huesped{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .huesped{
+    margin-top: 10px;
+  }
+
+  .text-huesped{
+    font-size: 17px;
+    align-content: center;
+    margin: 0;
+    color: #00264D;
+    font-weight: bold;
+  }
+
+  .cont-huesped{
+    font-size: 20px;
+    margin: 10px 10px;
+    align-content: center;
+    color: #00264D;
+    width: 50px;
+    text-align: center;
+    border: #00000056 solid 1px;
+    border-radius: 10px;
+  }
+
+  .icono-huesped{
+    padding-top: 7px;
+    font-size: 38px;
+    align-content: center;
+    cursor: pointer;
+    color: #00A4BD;
+  }
+
+
+
 /* Footer */
 .footer{
     width: 100%;
@@ -352,13 +553,67 @@ body{
 }
 
 .cont-footer{
-    width: 50%;
+    width: 70%;
+    padding: 20px;
 }
 
 .text-footer{
     color: #fff;
     font-size: 20px;
 }
+
+.text2-footer{
+    position: relative;
+    top: 30px;
+    font-size: 15px;
+    padding-left: 250px;
+    color: #000;
+}
+
+.icon{
+    display: flex;
+    justify-content: end;
+}
+
+.icons{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.input-footer{
+    text-decoration: none;
+    border: 0;
+    border-bottom: #ffff 3px solid;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+    width: 400px;
+    height: 30px;
+    background-color: #0B97B8;
+    outline: none;
+}
+
+input::placeholder {
+    color: #00264D; 
+    opacity: 1;  
+}
+
+.btn-footer{
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 150px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ffff;
+    border-radius: 8px;
+}
+
+
+
+
+
+
 
 
 

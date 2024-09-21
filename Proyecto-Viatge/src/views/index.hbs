@@ -7,34 +7,105 @@
             <h6 class="titulo-item">Destino</h6>
             <div class="subitem flex">
                 <i class="fi fi-ts-marker icono-index"></i>
-                <h2 class="subtitulo-item">¿Adonde quieres ir?</h2>
+                <div class="dropdown">
+                    <input id="dropdownBuscar" class="dropdownBtn subtitulo-item" placeholder="¿A donde quieres ir?">
+                    <div id="dropContenido" class="dropdown-content">
+                        {{#each Hoteles}}
+                        <div class="datos-ciudad">
+                            <span class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this.Nombre_Ciudad}}, {{this.Nombre_Pais}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="busqueda-item">
+        <div class="busqueda-item" id="abrir-modal">
             <h6 class="titulo-item itemT">Llegada</h6>
             <div class="subitem flex">
                 <i class="fi fi-tr-calendar-clock icono-index"></i>
-                <h2 class="subtitulo-item">Dom, 15/09/24</h2>
+                <h2 id="llegada" class="subtitulo-item">Agregar Fecha</h2>
             </div>
         </div>
         <div class="busqueda-item">
             <h6 class="titulo-item itemT">Salida</h6>
             <div class="subitem flex">
-                <h2 class="subtitulo-item">Dom, 22/09/24</h2>
+                <i class="fi fi-tr-calendar-clock icono-index"></i>
+                <h2 id="salida" class="subtitulo-item">Agregar Fecha</h2>
             </div>
             
         </div>
-        <div class="busqueda-item">
+        <div class="busqueda-item" id="abrir-huesped">
             <h6 class="titulo-item">Personas/Habitaciones</h6>
             <div class="subitem flex">
                 <i class="fi fi-tr-users icono-index"></i>
-                <h2 class="subtitulo-item">3 Huespedes, 1 Habitacion</h2>
+                <h2 id="huesped/habitacion" class="subtitulo-item">2 Huespedes, 1 Habitacion</h2>
             </div>
         </div>
     </div>
-    <div class="btn-buscar">
+    <div class="btn-buscar" id="btn-buscar">
         <a class="txt-buscar">Buscar</a>
     </div>
+    {{!-- MODAL CALENDARIO --}}
+    <div id="calendarModal" class="modal">
+        <div class="modal-contenido">
+            {{!-- <h3 id="FechaSeleccionada">Fechas seleccionadas</h3> --}}
+            <div class="calendario">
+                <div class="calenHeader">
+                    <button id="prevbtn" class="btn-calendario">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                    <h2 id="mesActual"></h2>
+                    <button id="nextbtn">
+                        <i class="fas fa-angle-right"></i>
+                    </button>    
+                </div>
+                <div class="dias-sem">
+                    <span>Dom</span>
+                    <span>Lun</span>
+                    <span>Mar</span>
+                    <span>Mie</span>
+                    <span>Jue</span>
+                    <span>Vie</span>
+                    <span>Sab</span>
+                </div>
+                <div id="calenBody" class="calenBody">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- MODAL HUESPEDES/HABITACIONES --}}
+    <div id="huespedModal" class="modal">
+        <div class="modal-contenido">
+            {{!-- <h3 id="FechaSeleccionada">Fechas seleccionadas</h3> --}}
+            <div class="calendario">
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Adultos</h2>
+                    <div class="flex">
+                        <i id="menos" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad" class="cont-huesped">0</h3>
+                        <i id="mas" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Niños</h2>
+                    <div class="flex">
+                        <i id="menos1" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad1" class="cont-huesped">0</h3>
+                        <i id="mas1" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Habitaciones</h2>
+                    <div class="flex">
+                        <i id="menos2" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad2" class="cont-huesped">0</h3>
+                        <i id="mas2" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="text-cards">
         <div class="sec-text">
             <h2 class="sec-titulo">
