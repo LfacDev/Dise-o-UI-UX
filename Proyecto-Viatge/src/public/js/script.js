@@ -51,9 +51,9 @@ abrirModal.addEventListener("click", function(){
 
 window.addEventListener("click",function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+    modal.style.display = "none";
     }
-  });
+});
 
 
 //botones para mostrar mes siguiente o mes anterior 

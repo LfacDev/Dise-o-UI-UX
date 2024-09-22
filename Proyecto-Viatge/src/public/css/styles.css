@@ -611,6 +611,202 @@ input::placeholder {
 
 
 
+/* --------------------- LISTADO HOTELES ---------------------- */
+
+/* SECTION 1 */
+.sec1-hotel{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.sec1H-img{
+    height: 100%;
+    width: 100%;
+}
+
+.sec1-imgH{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 70%;
+}
+
+.busqueda-indexH{
+    width:80%;
+    height: 150px;
+    border: solid 5px #F24A87;
+    border-radius: 30px;
+    position: relative;
+    bottom: 300px;
+    left: 130px;
+    background-color: #ffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-buscarH{
+    height: 50px;
+    width: 120px;
+    background-color: #F24A87;
+    margin: auto;
+    position: relative;
+    bottom: 320px;
+    text-align: center;
+    align-content: center;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* CARD HOTEL */
+
+.card-hotel{
+    width:45%;
+    border: #0B97B8 solid 2px;
+    height: 350px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.card-contenido{
+    display: flex;
+}
+
+.cont-img-hotel{
+    width: 45%;
+    height: 230px;
+    margin: 15px;
+    border-radius: 20px;
+}
+
+.img-hotel{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.info-hotel{
+    width: 55%;
+    height: 200px;
+}
+
+.nom-hotel{
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.sub-info{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.info1{
+    margin: 0 10px 0 0;
+    font-size: 13px;
+    align-content: center;
+    font-weight: 600;
+}
+
+.info2{
+    align-content: center;
+    font-size: 20px;
+    color: orange;
+    padding-top: 5px;
+}
+
+.info3{
+    margin: 0;
+    font-size: 13px;
+    align-content: center;
+    color: #00000086;
+}
+
+.rat-hotel{
+    
+    margin: 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.precios{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 15px 0 0;
+    padding: 10px;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #fff;
+}
+
+.precio-nombre{
+    font-size: 18px;
+    align-content: center;
+    margin: 0;
+    font-weight: 600;
+    
+}
+
+.precio{
+    font-size: 13px;
+    align-content: center;
+    margin: 0;
+}
+
+.icon-precio{
+    align-content: center;
+    text-decoration: none;
+}
+
+.icon-pre{
+    padding: 8px 5px 5px 5px;
+    align-content: center;
+    color: #fff;
+    border-radius:50%;
+    background-color: #000;
+}
+
+.precios-fav{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 15px 0 15px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #0b98b860;
+}
+
+.precio-nombre-fav{
+    font-size: 20px;
+    align-content: center;
+    margin: 0;
+    font-weight: 600;
+    color: #0B97B8;
+}
+
+.precio-fav{
+    font-size: 15px;
+    align-content: center;
+    margin: 0;
+}
+
+.icon-precio-fav{
+    align-content: center;
+    text-decoration: none;
+    background-color: #0B97B8;
+    padding: 8px 5px 5px 5px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+
+
+
+
 
 
 

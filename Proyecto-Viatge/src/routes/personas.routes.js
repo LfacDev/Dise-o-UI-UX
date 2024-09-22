@@ -16,6 +16,8 @@ router.get('/listHotel', (req, res) => {
     res.render('personas/listHotel', { showNav: true, showFooter: true }); // Asegúrate de que 'listHotel' es el nombre correcto de tu archivo HBS
 });
 
+
+
 /* router.get('/index', async(req, res)=>{
     try{
         console.log('entre');

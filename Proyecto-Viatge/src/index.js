@@ -7,11 +7,19 @@ import personasRoutes from './routes/personas.routes.js';
 import pool from './database.js';
 // Importar el cliente de Apify
 import { ApifyClient } from 'apify-client';
+import session from 'express-session';
 
 //initializacion
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// Configuración de la sesión
+app.use(session({
+    secret: 'tu-secreto-aqui', // Cambia esto a un secreto más seguro
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Cambia a true si usas HTTPS
+}));
 
 
 //setting
@@ -105,13 +113,28 @@ app.get('/run-task', async (req, res) => {
 
         // Pasar los parámetros al scraper
         const scrapedData = await BookingScraper(checkIn, checkOut, search, adultsCount, childrenCount, roomsCount);
-        res.render('personas/listHotel', { hotels: scrapedData });
-         console.log(scrapedData);
+         // Guardar los resultados en una sesión
+        req.session.hotels = scrapedData;
+
+         // Redirigir a la vista 'listHotel'
+        res.redirect('/personas/listHotel');
+        
+        console.log(scrapedData);
     } catch (error) {
         console.error('Error running task:', error);  // Mostrar el error en la consola
         res.status(500).send(`Error: ${error.message}`);  // Devolver el mensaje de error como JSON
     }
 });
+
+// Ruta para mostrar la lista de hoteles
+app.get('/personas/listHotel', async(req, res) => {
+    const hotels = req.session.hotels; // Obtener los datos de la sesión
+    const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
+        console.log(pais);
+    res.render('personas/listHotel', {showNav: true, showFooter: true, hotels, Hoteles: pais });
+});
+
+
 
 //run server
 app.listen(app.get('port'), ()=>
