@@ -109,7 +109,7 @@
     </div>
 
 <section class="sec2-hotel">
-    <ul>
+    <ul class="ulH">
         {{#each hotels}}
             <div class="card-hotel">
                 <div class="card-contenido">
@@ -144,11 +144,16 @@
                     <h2 class="precio-fav">$200K/Noche</h2>
                     <a class="icon-precio-fav" href="https://www.airbnb.com.co/">Ver Oferta ></a>
                 </div> 
+                <span id="ubi_latitud" class="ubi_latitud hidden" type="hidden">{{this.location.lat}}</span>
+                <span id="ubi_longitud" class="ubi_longitud hidden" type="hidden">{{this.location.lng}}</span>
             </div>
         {{else}}
             <li>No se encontraron hoteles.</li>
         {{/each}}
     </ul>
+    <div class="mapa">
+        <div id="miMapa"></div>
+    </div>
 </section>
     
 

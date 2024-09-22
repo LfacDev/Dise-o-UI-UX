@@ -314,6 +314,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    let map = L.map('miMapa').setView([4.631826, -74.080483], 19);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Obtiene todas las latitudes y longitudes
+    let latitudes = document.getElementsByClassName('ubi_latitud');
+    let longitudes = document.getElementsByClassName('ubi_longitud');
+
+    // Itera sobre las latitudes y longitudes para crear marcadores
+    for (let i = 0; i < latitudes.length; i++) {
+        let latitud = latitudes[i].textContent;
+        let longitud = longitudes[i].textContent;
+
+        // Agregar un marcador en el mapa
+        L.marker([latitud, longitud]).addTo(map)
+            .bindPopup('Hotel marker')
+            .openPopup();
+    }
+});
+        
+
 
 
 

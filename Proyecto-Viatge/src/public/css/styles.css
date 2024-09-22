@@ -660,9 +660,11 @@ input::placeholder {
 
 
 /* CARD HOTEL */
-
+.ulH{
+    width: 45%;
+}
 .card-hotel{
-    width:45%;
+    width:100%;
     border: #0B97B8 solid 2px;
     height: 350px;
     border-radius: 15px;
@@ -801,6 +803,24 @@ input::placeholder {
     color: #fff;
     font-weight: 600;
     border-radius: 10px;
+}
+
+.sec2-hotel{
+    display: flex;
+}
+
+.mapa{
+    width: 30%;
+}
+
+#miMapa{
+    height: 600px;
+    width: 600px;
+    border-radius: 15px;
+}
+
+.hidden{
+    display: none;
 }
 
 
