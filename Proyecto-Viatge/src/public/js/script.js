@@ -323,18 +323,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // Obtiene todas las latitudes y longitudes
     let latitudes = document.getElementsByClassName('ubi_latitud');
     let longitudes = document.getElementsByClassName('ubi_longitud');
+    let imagen = document.getElementsByClassName('img-hotel');
+    let nombre = document.getElementsByClassName('nom-hotel');
 
     // Itera sobre las latitudes y longitudes para crear marcadores
     for (let i = 0; i < latitudes.length; i++) {
         let latitud = latitudes[i].textContent;
         let longitud = longitudes[i].textContent;
+        let img = imagen[i].src;
+        let nom = nombre[i].textContent 
 
         // Agregar un marcador en el mapa
         L.marker([latitud, longitud]).addTo(map)
-            .bindPopup('Hotel marker')
+            .bindPopup(`
+                <div style="text-align: center; border-radius: 15px; background-color: #A5D9E5;">
+                    <img src="${img}" alt="Imagen del hotel" style="width: 100px; height: 100px; border-radius: 15px;">
+                    <p><strong>${nom}</strong></p>
+                </div>
+            `)
             .openPopup();
     }
 });
+
         
 
 
