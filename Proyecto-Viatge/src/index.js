@@ -3,7 +3,9 @@ import morgan from 'morgan';
 import { engine } from 'express-handlebars';
 import {join, dirname} from 'path'
 import { fileURLToPath } from 'url';
-import personasRoutes from './routes/personas.routes.js';
+import personasRoutes from './routes/personas.routes.js'
+import usuariosRoutes from './routes/usuarios.routes.js'
+import actividadesRoutes from './routes/actividades.routes.js'
 import pool from './database.js';
 // Importar el cliente de Apify
 import { ApifyClient } from 'apify-client';
@@ -39,6 +41,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+
 //routes
 /* app.get('/', (req, res) => {
     res.render('index',{ showNav: true, showFooter: true })
@@ -59,6 +62,8 @@ app.get('/', async(req, res)=>{
 
 
 app.use(personasRoutes);
+app.use(usuariosRoutes);
+app.use(actividadesRoutes);
 
 //public files
 app.use(express.static(join(__dirname, 'public')));

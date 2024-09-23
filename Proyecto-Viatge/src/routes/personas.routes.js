@@ -3,15 +3,6 @@ import pool from '../database.js'
 
 const router = Router();
 
-router.get('/login', (req, res) => {
-    res.render('personas/login', { showNav: false, showFooter: false });
-});
-
-
-router.get('/register', (req, res) => {
-    res.render('personas/register', { showNav: false, showFooter: false });
-});
-
 router.get('/listHotel', (req, res) => {
     res.render('personas/listHotel', { showNav: true, showFooter: true }); // Asegúrate de que 'listHotel' es el nombre correcto de tu archivo HBS
 });
