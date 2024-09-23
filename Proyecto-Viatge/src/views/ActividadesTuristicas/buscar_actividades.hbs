@@ -1,0 +1,59 @@
+<main class="main">
+    <div class="container-index">
+        <img class="img-index" src="../img/img-buscar-actividad.jpg" alt="Viatge">
+    </div>
+   <div class="busqueda-index flex">
+        <div class="busqueda-item">
+            <h6 class="titulo-item">Destino</h6>
+            <div class="subitem flex">
+                <i class="fi fi-ts-marker icono-index"></i>
+                <h2 class="subtitulo-item">¿Adonde quieres ir?</h2>
+            </div>
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item itemT">Llegada</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-calendar-clock icono-index"></i>
+                <h2 class="subtitulo-item">Dom, 15/09/24</h2>
+            </div>
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item itemT">Salida</h6>
+            <div class="subitem flex">
+                <h2 class="subtitulo-item">Dom, 22/09/24</h2>
+            </div>
+            
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item">Personas/Habitaciones</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-users icono-index"></i>
+                <h2 class="subtitulo-item">3 Huespedes, 1 Habitacion</h2>
+            </div>
+        </div>
+    </div>
+    <div class="btn-buscar">
+        <a class="txt-buscar">Buscar</a>
+    </div>
+    
+   <section class="content-carts">
+    {{#each buscarActividad}}
+        <div class="carts">
+            <img class="foto-actividad" src="/img/imag_Actividades/{{URL_ImagenActividad}}" alt="Foto Actividad {{Nombre_Actividad}}">
+            <div class="container-descripcion-actividad">
+                <div class="container-text-actividad"><h4 class="actividad-title">{{Nombre_Actividad}}</h4></div>
+                <div class="calificacion-estrella">
+                    <img class="estrella-im" src="img/estrella (1).png" alt=""><span class="calificacion-valor-actividad">{{calificacion}}</span>
+                </div>
+                <div class="ubicacion-actividad"><i class="fa-solid fa-location-dot"></i> {{Nombre_Ciudad}}, {{Nombre_Pais}}</div>
+                <div class="call-on-actividad">
+                    <a class="boton-call-on-actividad" href="/ver_actividad/{{IDActividad}}">Ver Actividad</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+   </section>
+   
+
+    
+<

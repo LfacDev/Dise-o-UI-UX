@@ -133,5 +133,256 @@ body{
     height: 100%;
     object-fit: cover;
 }
+.icono-img{
+    width: 60px;
+    height: 60px;
+}
+.logo{
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: #EAD29C;
+}
 
+/*________________________ DISEÑO REGISTRO _________________________________*/
+.body-register{
+    background-color: #0B97B8;
+    overflow: hidden;
+    
+}
+.cont-register{
+    margin-left: 5%;
+    margin-top: 1%;
+    height: 500px;
+    width: 1140px;
+    background-color: #E3EBF3;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.im-register{
+    height: 500px;
+    width: 570px;
+    background: #0B97B8;
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px 1px  rgb(88, 88, 88);
+}
+.im-register img{
+    height: 490px;
+    width: 570px;
+}
+.cont-form-register{
+    height: 500px;
+    width: 570px;
+}
+.label-register-text, .input-register{
+    width: 80%;
+    margin-left: 10%;
+    padding: 5px;
+}
+.title-register{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10% ;
+}
+.diferen-register{
+color: #0B97B8;
+}
+.label-register-text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #0B97B8;
+    margin-top:10px ;
+    font-size: 16px;
+}
+.input-register{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #0B97B8;
+}
+.input-register:focus{
+ outline: none;
+}
+.input-register:active{
+outline: none;
+}
+.btn-register{
+    background-color: #0B97B8;
+    font-family: "Marcellus", serif;
+    font-weight: 200;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #E3EBF3;
+    margin-left: 35%;
+    margin-top: 7%;
+    padding: 5px 30px;
+}
 
+/*________________________ DISEÑO LOGIN _________________________________*/
+.body-login{
+    background-color: #F24A87;
+    overflow: hidden;
+    
+}
+.cont-login{
+    margin-left: 5%;
+    margin-top: 1%;
+    height: 500px;
+    width: 1140px;
+    background-color: #feecf3;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.im-login{
+    height: 500px;
+    width: 570px;
+    background: #F24A87;
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px 1px  rgb(88, 88, 88);
+}
+.im-login img{
+    height: 490px;
+    width: 570px;
+}
+.cont-form-login{
+    height: 500px;
+    width: 570px;
+}
+.label-login-text, .input-login{
+    width: 80%;
+    margin-left: 10%;
+    padding: 5px;
+}
+.title-login{
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10% ;
+}
+.diferen-login{
+color: #F24A87;
+}
+.label-login-text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #F24A87;
+    margin-top:10px ;
+    font-size: 16px;
+}
+.input-login{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #F24A87;
+}
+.input-login:focus{
+ outline: none;
+}
+.input-login:active{
+outline: none;
+}
+.btn-login{
+    background-color: #F24A87;
+    font-family: "Marcellus", serif;
+    font-weight: 200;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #E3EBF3;
+    margin-left: 35%;
+    margin-top: 7%;
+    padding: 5px 30px;
+}
+
+/*__________________ SECCIÓN ACTIVIDADES TURISTICAS ____________________*/
+.content-carts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+}
+.carts{
+    background-color: #F7F9FC;
+    width: 45%;
+    height: 230px;
+    border: #F24A87 2px solid;
+    margin-bottom:30px ;
+    margin-left: 30PX;
+    margin-right: 30px;
+    border-radius: 20px;
+    display: flex;
+}
+.foto-actividad{
+    width: 300px ;
+    height: 200px ;
+    border-radius: 5%;
+    box-shadow:1px 1px 4px 1px #000;
+    margin: 10px;
+    border: #E3EBF3 1px solid;
+}
+.container-descripcion-actividad{
+    display: flex;
+    flex-direction: column;
+}
+.container-text-actividad{
+    width: 100%;
+}
+.actividad-title{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+.estrella-im{
+    width: 60px;
+    height: 60px;
+    margin: 3px 0px 20px 0px ;
+
+}
+.calificacion-estrella{
+    position: relative;
+    display: inline-block;
+    text-align: center; 
+}
+.calificacion-valor-actividad {
+    font-size: 20px;
+    color: #000;
+    position: absolute; /* Coloca el texto en posición absoluta */
+    top: 17px; /* Ajusta según sea necesario para alinearlo en el centro */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el texto para que esté realmente centrado */
+    z-index: 1; /* Asegura que el texto esté por encima de la estrella */
+}
+.call-on-actividad{
+    margin-top: 7px;
+    margin-left: 70px;
+}
+.boton-call-on-actividad{
+    text-decoration: none;
+    text-align: center;
+    background-color: #F24A87;
+    color: #F7F9FC;
+    padding: 7px;
+    border-radius: 5px;
+} 
+.ubicacion-actividad{
+    margin-left: 10px;
+}

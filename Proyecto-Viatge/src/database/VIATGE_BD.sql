@@ -1,7 +1,6 @@
 CREATE DATABASE Viatge_BD;
 USE Viatge_BD;
 
-
 -- Usuario del Sistema
 CREATE TABLE Usuario(
 ID_Usuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -150,9 +149,11 @@ TotalPagar_Hotel DECIMAL(8, 4),
 FK_Hotel INT,
 FK_Huesped INT,
 FK_Usuario INT,
+FK_TipoPago INT,
 FOREIGN KEY (FK_Hotel) REFERENCES Hotel(ID_Hotel),
 FOREIGN KEY (FK_Huesped) REFERENCES Huesped(ID_Huesped),
-FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario)
+FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario),
+FOREIGN KEY (FK_TipoPago) REFERENCES Tipo_Pago(ID_TipoPago)
 );
 
 -- Reserva de habitacion 
@@ -194,9 +195,11 @@ TotalPagar_Actividad DECIMAL(10, 2),
 FK_ActividadTuristica INT,
 FK_Huesped INT,
 FK_Usuario INT,
+FK_TipoPago INT,
 FOREIGN KEY (FK_ActividadTuristica) REFERENCES Actividad_Turistica(ID_ActividadTuristica),
 FOREIGN KEY (FK_Huesped) REFERENCES Huesped(ID_Huesped),
-FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario)
+FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario),
+FOREIGN KEY (FK_TipoPago) REFERENCES Tipo_Pago(ID_TipoPago)
 );
 
 -- Reseñas y Calificaciones

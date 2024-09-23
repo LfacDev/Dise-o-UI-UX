@@ -5,7 +5,7 @@ const pool = createPool({
     port: '3306',
     user: 'root',
     password: '',
-    database: 'prueba01'
+    database: 'VIATGE_BD'
 });
 
 export default pool;
