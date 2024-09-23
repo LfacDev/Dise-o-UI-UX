@@ -1,0 +1,159 @@
+<section class="sec1-hotel">
+    <div class="sec1H-img">
+        <img class="sec1-imgH" src="../img/hotelRecepcion.jpg" alt="">
+    </div>
+    <div class="busqueda-indexH flex">
+        <div class="busqueda-item">
+            <h6 class="titulo-item">Destino</h6>
+            <div class="subitem flex">
+                <i class="fi fi-ts-marker icono-index"></i>
+                <div class="dropdown">
+                    <input id="dropdownBuscar" class="dropdownBtn subtitulo-item" placeholder="¿A donde quieres ir?">
+                    <div id="dropContenido" class="dropdown-content">
+                        {{#each Hoteles}}
+                        <div class="datos-ciudad">
+                            <span class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this.Nombre_Ciudad}}, {{this.Nombre_Pais}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="busqueda-item" id="abrir-modal">
+            <h6 class="titulo-item itemT">Llegada</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-calendar-clock icono-index"></i>
+                <h2 id="llegada" class="subtitulo-item">Agregar Fecha</h2>
+            </div>
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item itemT">Salida</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-calendar-clock icono-index"></i>
+                <h2 id="salida" class="subtitulo-item">Agregar Fecha</h2>
+            </div>
+            
+        </div>
+        <div class="busqueda-item" id="abrir-huesped">
+            <h6 class="titulo-item">Personas/Habitaciones</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-users icono-index"></i>
+                <h2 id="huesped/habitacion" class="subtitulo-item">2 Huespedes, 1 Habitacion</h2>
+            </div>
+        </div>
+    </div>
+    <div class="btn-buscarH" id="btn-buscar">
+        <a class="txt-buscar">Buscar</a>
+    </div>
+</section>
+
+{{!-- MODAL CALENDARIO --}}
+    <div id="calendarModal" class="modal">
+        <div class="modal-contenidoH">
+            {{!-- <h3 id="FechaSeleccionada">Fechas seleccionadas</h3> --}}
+            <div class="calendario">
+                <div class="calenHeader">
+                    <button id="prevbtn" class="btn-calendario">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                    <h2 id="mesActual"></h2>
+                    <button id="nextbtn">
+                        <i class="fas fa-angle-right"></i>
+                    </button>    
+                </div>
+                <div class="dias-sem">
+                    <span>Dom</span>
+                    <span>Lun</span>
+                    <span>Mar</span>
+                    <span>Mie</span>
+                    <span>Jue</span>
+                    <span>Vie</span>
+                    <span>Sab</span>
+                </div>
+                <div id="calenBody" class="calenBody">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- MODAL HUESPEDES/HABITACIONES --}}
+    <div id="huespedModal" class="modal">
+        <div class="modal-contenidoH">
+            {{!-- <h3 id="FechaSeleccionada">Fechas seleccionadas</h3> --}}
+            <div class="calendario">
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Adultos</h2>
+                    <div class="flex">
+                        <i id="menos" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad" class="cont-huesped">0</h3>
+                        <i id="mas" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Niños</h2>
+                    <div class="flex">
+                        <i id="menos1" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad1" class="cont-huesped">0</h3>
+                        <i id="mas1" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+                <div class="huesped flex-huesped">
+                    <h2 class="text-huesped">Habitaciones</h2>
+                    <div class="flex">
+                        <i id="menos2" class="fi fi-tr-minus-circle icono-huesped"></i>
+                        <h3 id="cantidad2" class="cont-huesped">0</h3>
+                        <i id="mas2" class="fi fi-tr-add icono-huesped"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="sec2-hotel">
+    <ul class="ulH">
+        {{#each hotels}}
+            <div class="card-hotel">
+                <div class="card-contenido">
+                    <div class="cont-img-hotel">
+                        <img class="img-hotel" src="{{this.image}}" alt="">
+                    </div>
+                    <div class="info-hotel">
+                        <h2 class="nom-hotel">{{this.name}}</h2>
+                        <div class="sub-info">
+                            <h2 class="info1">Hotel</h2>
+                            <h2 class="info2">★</h2>
+                            <h2 class="info2">★</h2>
+                            <h2 class="info2">★</h2>
+                            <h2 class="rat-hotel">{{this.rating}}</h2>
+                            <h1 class="info3">Muy Bueno</h2>
+                        </div>
+                        <h2 class="info3"><i class="fi fi-ts-marker icono-drop"></i>{{this.address.street}}</h2>
+                        <div class="precios">
+                            <h2 class="precio-nombre">Booking.com</h2>
+                            <h2 class="precio">$300K/Noche</h2>
+                            <a class="icon-precio" href="https://www.airbnb.com.co/"><i class="fi fi-rr-angle-double-small-right icon-pre"></i></a>
+                        </div>
+                        <div class="precios">
+                            <h2 class="precio-nombre">Hotels.com</h2>
+                            <h2 class="precio">$200K/Noche</h2>
+                            <a class="icon-precio" href="https://www.airbnb.com.co/"><i class="fi fi-rr-angle-double-small-right icon-pre"></i></a>
+                        </div>  
+                    </div>
+                </div>
+                <div class="precios-fav">
+                    <h2 class="precio-nombre-fav">Hotels.com</h2>
+                    <h2 class="precio-fav">$200K/Noche</h2>
+                    <a class="icon-precio-fav" href="https://www.airbnb.com.co/">Ver Oferta ></a>
+                </div> 
+                <span id="ubi_latitud" class="ubi_latitud hidden" type="hidden">{{this.location.lat}}</span>
+                <span id="ubi_longitud" class="ubi_longitud hidden" type="hidden">{{this.location.lng}}</span>
+            </div>
+        {{else}}
+            <li>No se encontraron hoteles.</li>
+        {{/each}}
+    </ul>
+    <div class="mapa">
+        <div id="miMapa"></div>
+    </div>
+</section>
+    
+

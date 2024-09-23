@@ -3,9 +3,36 @@ import pool from '../database.js'
 
 const router = Router();
 
-router.get('/add', (req, res)=>{
-    res.render('personas/add');
+router.get('/login', (req, res) => {
+    res.render('personas/login', { showNav: false, showFooter: false });
 });
+
+
+router.get('/register', (req, res) => {
+    res.render('personas/register', { showNav: false, showFooter: false });
+});
+
+router.get('/listHotel', (req, res) => {
+    res.render('personas/listHotel', { showNav: true, showFooter: true }); // Asegúrate de que 'listHotel' es el nombre correcto de tu archivo HBS
+});
+
+
+
+/* router.get('/index', async(req, res)=>{
+    try{
+        console.log('entre');
+        const [pais] = await pool.query('SELECT ID_Pais, Nombre_Pais FROM pais');
+        console.log(pais);
+        res.render('index', {showNav: true, showFooter: true, Hoteles: pais})
+    }catch(err){
+        console.log("Error:", err.message);
+        res.status(500).json({message:err.message});
+    }
+}); */
+
+/* router.get('/add', (req, res)=>{
+    res.render('personas/add', { showNav: true, showFooter: true });
+}); */
 
 router.post('/add', async(req, res)=>{
     
@@ -24,7 +51,7 @@ router.post('/add', async(req, res)=>{
 router.get('/list', async(req, res)=>{
     try{
         const [result] = await pool.query('SELECT personas.id ,personas.name, personas.lastname,personas.age, tipopersona.Nombre FROM personas INNER JOIN tipopersona on tipopersona.ID = personas.FK_tipopersona');
-        res.render('personas/list', {personas: result})
+        res.render('personas/list', {showNav: true, showFooter: true, personas: result})
     }catch(err){
         res.status(500).json({message:err.message});
     }
@@ -33,12 +60,10 @@ router.get('/list', async(req, res)=>{
 router.get('/edit/:id', async(req, res)=>{
     try {
         const {id} = req.params;
-        const[persona] = await pool.query('SELECT personas.id ,personas.name, personas.lastname,personas.age, tipopersona.Nombre FROM personas INNER JOIN tipopersona on tipopersona.ID = personas.FK_tipopersona WHERE personas.id= ?', [id]);
-        const personaEdit = persona[0];
+        const[Hoteles] = await pool.query('SELECT ID_Pais, Nombre_Pais FROM pais WHERE ID_Pais= ?', [id]);
+        const personaEdit = Hoteles[0];
 
-        const[tipopersona] = await pool.query('Select * from tipopersona');
-
-        res.render('personas/edit', {persona: personaEdit,  tipopersona: tipopersona});
+        res.render('personas/edit', {Hoteles: Hoteles});
     } catch (err) {
         res.status(500).json({message:err.message});
     }

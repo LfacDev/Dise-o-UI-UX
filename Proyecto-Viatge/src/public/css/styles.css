@@ -39,14 +39,15 @@ body{
 
 .busqueda-item{
     margin: 12px;  
+    cursor: pointer;
 }
 
 .subtitulo-item{
     font-size: 17px;
-    padding-top: 10px;
+    padding: 10px;
     color: #00264D;
     font-weight: bold;
-    padding-right: 30px;
+    padding-right: 20px;
 }
 
 .titulo-item{
@@ -84,6 +85,7 @@ body{
     text-align: center;
     align-content: center;
     border-radius: 40px;
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -93,10 +95,61 @@ body{
     font-size: 20px;
 }
 
+
+/* DROPDOWN */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+ .dropdownBtn{
+    width: 200px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+ } 
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 300px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.icono-drop{
+    margin-right: 5px;
+}
+
+
+.datos-ciudad{
+    margin: 10px;
+}
+
+.dropdown-content span {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content span:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+.ciudad{
+    border-bottom: #00000071 1px solid;
+    border-radius: 10px;
+}
+
+
 .text-cards{
     width: 100%;
     height: 700px;
-    border: solid 1px #000;
 }
 
 .sec-text{
@@ -111,27 +164,449 @@ body{
 }
 
 .sec-cards{
-    border: solid 1px #000;
     width: 100%;
-    height: 200px;
+    height: 520px;
     margin-top: 80px;
 }
 
 .card{
-    width: 100px;
+    width: 350px;
     height: 90%;
-    border: solid 1px #000;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: #E3EBF3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-img{
     width: 100%;
-    height: 50%;
+    height: 60%;
+    
 }
 
 .img-card{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 30px;
+}
+
+.card-text{
+    margin: 10px 15px;
+    font-weight: bold;
+}
+
+.flex-card{
+    display: flex;
+}
+
+.card-titulo{
+    margin-left: 5px;
+    font-size: 15px;
+    
+}
+
+.cal-card{
+    background-color: #EAD29C;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight:550;
+}
+
+.card-subtitulo{
+    font-size: 15px;
+    font-weight: bold;
+    align-content: center;
+    margin: auto;
+}
+
+.btn-card{
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+    background-color: #CD9361;
+    width: 70%;
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.sec2{
+    width: 100%;
+    height: 680px;
+    margin-top: 50px;
+    padding: 40px;
+}
+
+.gal-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Define dos columnas iguales */
+    gap: 10px;  /* Espacio entre las columnas */
+     /* Asegura que ambas columnas ocupen la misma altura */
+}
+
+.img-sec2,
+.img1-sec2 {
+    display: block;
+    height: 50%;  /* Asegura que ocupen la altura total disponible */
+}
+
+.img-sec2 img {
+    width: 100%;
+    height: 90%; 
+    object-fit: cover;  
+    border-radius: 30px;
+}
+
+.img1-sec2 img {
+    width: 100%;
+    padding-bottom: 10px;
+    height: 45%;  
+    object-fit: cover;  
+    border-radius: 30px;
+}
+
+.gal-text{
+    position: relative;
+    bottom: 90px;
+    padding: 0 15px;
+    margin: auto;
+    color: #ffff;
+}
+
+.gal-text1{
+    position: relative;
+    bottom: 260px;
+    padding: 0 15px;
+    margin: auto;
+    color: #ffff;
+    font-size: 20px;
+}
+
+.sec-actividades{
+    margin-top: 50px;
+}
+
+.act-sec{
+    height: 70px;
+    border: #0B97B8 solid 2px;
+    padding: 5px 20px;
+    border-radius: 40px;
+    background-color: #0b98b848;
+    margin-left: 30px;
+
+}
+
+.act-img{
+    width: 60px;
+}
+
+.act-text{
+    font-size: 15px;
+    margin: auto 0;
+    color: #095668;
+}
+
+.act-titulo{
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.act-subtitulo{
+    font-size: 18px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.act-card{
+    margin-top: 50px;
+    width: 200px;
+    height: 300px;
+    border: #000 solid 1px;
+}
+
+.acti-card{
+    height: 50%;
+}
+
+.img-card-act{
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.sec-cards-act{
+    width: 100%;
+    height: 350px;
+    margin-top: 30px;
+}
+
+.card-act{
+    width: 350px;
+    height: 90%;
+    margin: 30px;
+    border-radius: 30px;
+
+}
+
+.img-card-act{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-titulo-act{
+    font-size: 18px;
+    opacity: 0.5;    
+}
+
+.beneficios{
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.bene-card{
+    width: 300px;
+    height: 100px;
+    border: #F24A87 solid 2px;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+.flex-card-bene{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bene-img{
+    height: 100%;
+    height: 100px;
+    padding: 15px;
+}
+
+.bene-text{
+    font-size: 20px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* MODAL CALENDRIO */
+.modal {
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    left: 610px;
+    top: 310px;
+    width: 100vh;
+    height: 800px;
+    overflow: hidden;
+    
+  }
+  
+  .modal-contenido{
+    background-color: #fefefe;
+    margin: 30% auto; 
+    padding: 5px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .calendario{
+    width: 350px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  .calenHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .calenHeader button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .dias-sem {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+  }
+
+  .calenBody{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .calenDay{
+    border-radius:50%;
+    padding: 8px 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    margin: 2px;
+  }
+
+  .calenDay:hover{
+    background-color:#ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  .calenDay.selected{
+    border: 3px solid #f24a87;
+  }
+
+  .calenDay.range{
+    background-color: #0b97b8;
+  }
+
+  #prevbtn, #nextbtn{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin:0 10px 0 10px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  #prevbtn:hover{
+    background-color: #ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  #nextbtn:hover{
+    background-color: #ddd !important;
+    transition: background-color 0.3s ease;
+  }
+
+  #FechaSeleccionada{
+    font-family: 'Poppins';
+  }
+
+  #mesActual{
+    font-family:'Poppins';
+    font-size:18px;
+  }
+
+  /* MODAL HUESPEDES */
+
+  .flex-huesped{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .huesped{
+    margin-top: 10px;
+  }
+
+  .text-huesped{
+    font-size: 17px;
+    align-content: center;
+    margin: 0;
+    color: #00264D;
+    font-weight: bold;
+  }
+
+  .cont-huesped{
+    font-size: 20px;
+    margin: 10px 10px;
+    align-content: center;
+    color: #00264D;
+    width: 50px;
+    text-align: center;
+    border: #00000056 solid 1px;
+    border-radius: 10px;
+  }
+
+  .icono-huesped{
+    padding-top: 7px;
+    font-size: 38px;
+    align-content: center;
+    cursor: pointer;
+    color: #00A4BD;
+  }
+
+
+
+/* Footer */
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: #0B97B8;
+    margin-top: 50px;
+    display: flex;
+}
+
+.cont-footer{
+    width: 70%;
+    padding: 20px;
+}
+
+.text-footer{
+    color: #fff;
+    font-size: 20px;
+}
+
+.text2-footer{
+    position: relative;
+    top: 30px;
+    font-size: 15px;
+    padding-left: 250px;
+    color: #000;
+}
+
+.icon{
+    display: flex;
+    justify-content: end;
+}
+
+.icons{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.input-footer{
+    text-decoration: none;
+    border: 0;
+    border-bottom: #ffff 3px solid;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+    width: 400px;
+    height: 30px;
+    background-color: #0B97B8;
+    outline: none;
+}
+
+input::placeholder {
+    color: #00264D; 
+    opacity: 1;  
+}
+
+.btn-footer{
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 150px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #000;
+    background-color: #ffff;
+    border-radius: 8px;
 }
 .icono-img{
     width: 60px;
@@ -386,3 +861,242 @@ outline: none;
 .ubicacion-actividad{
     margin-left: 10px;
 }
+
+/* --------------------- LISTADO HOTELES ---------------------- */
+
+/* SECTION 1 */
+.sec1-hotel{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.sec1H-img{
+    height: 100%;
+    width: 100%;
+}
+
+.sec1-imgH{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 70%;
+}
+
+.busqueda-indexH{
+    width:80%;
+    height: 150px;
+    border: solid 5px #F24A87;
+    border-radius: 30px;
+    position: relative;
+    bottom: 400px;
+    left: 130px;
+    background-color: #ffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-buscarH{
+    height: 50px;
+    width: 120px;
+    background-color: #F24A87;
+    margin: auto;
+    position: relative;
+    bottom: 420px;
+    text-align: center;
+    align-content: center;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* CARD HOTEL */
+.ulH{
+    margin-top: 50px;
+    width: 45%;
+    margin-right: 30px;
+}
+.card-hotel{
+    width:100%;
+    border: #0B97B8 solid 2px;
+    height: 350px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.card-contenido{
+    display: flex;
+}
+
+.cont-img-hotel{
+    width: 45%;
+    height: 230px;
+    margin: 15px;
+    border-radius: 20px;
+}
+
+.img-hotel{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.info-hotel{
+    width: 55%;
+    height: 200px;
+}
+
+.nom-hotel{
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.sub-info{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.info1{
+    margin: 0 10px 0 0;
+    font-size: 13px;
+    align-content: center;
+    font-weight: 600;
+}
+
+.info2{
+    align-content: center;
+    font-size: 20px;
+    color: orange;
+    padding-top: 5px;
+}
+
+.info3{
+    margin: 0;
+    font-size: 13px;
+    align-content: center;
+    color: #00000086;
+}
+
+.rat-hotel{
+    
+    margin: 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.precios{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 15px 0 0;
+    padding: 10px;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #fff;
+}
+
+.precio-nombre{
+    font-size: 18px;
+    align-content: center;
+    margin: 0;
+    font-weight: 600;
+    
+}
+
+.precio{
+    font-size: 13px;
+    align-content: center;
+    margin: 0;
+}
+
+.icon-precio{
+    align-content: center;
+    text-decoration: none;
+}
+
+.icon-pre{
+    padding: 8px 5px 5px 5px;
+    align-content: center;
+    color: #fff;
+    border-radius:50%;
+    background-color: #000;
+}
+
+.precios-fav{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 15px 0 15px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 60px;
+    background-color: #0b98b860;
+}
+
+.precio-nombre-fav{
+    font-size: 20px;
+    align-content: center;
+    margin: 0;
+    font-weight: 600;
+    color: #0B97B8;
+}
+
+.precio-fav{
+    font-size: 15px;
+    align-content: center;
+    margin: 0;
+}
+
+.icon-precio-fav{
+    align-content: center;
+    text-decoration: none;
+    background-color: #0B97B8;
+    padding: 8px 5px 5px 5px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.modal-contenidoH {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 5px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sec2-hotel{
+    display: flex;
+}
+
+.mapa{
+    margin-top: 50px;
+    width: 30%;
+}
+
+#miMapa{
+    height: 600px;
+    width: 600px;
+    border-radius: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

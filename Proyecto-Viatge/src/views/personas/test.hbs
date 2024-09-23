@@ -1,0 +1,12 @@
+ <h1>Resultados de Hoteles</h1>
+    <ul>
+        {{#each hotels}}
+            <li>
+                <h2>{{this.name}}</h2>
+                <p>{{this.description}}</p>
+                <p>Precio: {{this.price}}</p>
+            </li>
+        {{else}}
+            <li>No se encontraron hoteles.</li>
+        {{/each}}
+    </ul>
