@@ -136,6 +136,22 @@ app.get('/personas/listHotel', async(req, res) => {
 
 
 
+//Ruta para mostrar las habitaciones del Hotel
+app.get('/personas/RoomsHotel', async (req, res) => {
+    const hotelId = req.query.id;
+    const hotels = req.session.hotels; // Asegúrate de que tienes la lista de hoteles en la sesión
+    const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
+    console.log(pais);
+
+    const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
+    if (HotelSeleccionado) {
+        res.render('personas/RoomsHotel', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais });
+    } else {
+        res.status(404).send('Hotel no encontrado');
+    }
+});
+
+
 //run server
 app.listen(app.get('port'), ()=>
 console.log('El server esta escuchando en el puerto', app.get('port')));
