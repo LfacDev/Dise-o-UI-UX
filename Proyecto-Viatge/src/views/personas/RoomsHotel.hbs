@@ -120,16 +120,71 @@
         <h2 class="Hname">{{hotel.name}}</h2>
         <div class="imgsInfo">
             <div class="imginfo">
-                <img class="imginfos" src="" alt="">
+                <img class="imginfos" src="{{hotel.images.[0]}}" alt="Imagen del hotel 1">
             </div>
-            <div>
-                
+            <div class="imgsInfo2">
+                <div class="imgsInfo3">
+                    <div class="imgsInfo2s">
+                        <img class="imginfos" src="{{hotel.images.[1]}}" alt="Imagen del hotel 1">
+                    </div>
+                    <div class="imgsInfo2s2">
+                        <img class="imginfos" src="{{hotel.images.[2]}}" alt="Imagen del hotel 1">
+                    </div>
+                </div>
+                <div class="imgsInfo4">
+                    <img class="imginfos" src="{{hotel.images.[3]}}" alt="Imagen del hotel 1">
+                </div>
             </div>
         </div>
-        
+        <div class="desc-general">
+            <h2 class="DescTitulo">Acerca del Lugar</h2>
+            <div class="descripcion">
+                <p>{{hotel.hostInfo.welcomeMessage}}</p>
+                <p>{{hotel.hostInfo.neighboorhoodInfo}}</p>
+            </div>
+        </div>
+            
     </div>
 </section>
-<h1>{{hotel.name}}</h1>
+<section class="sectionSR">
+    <h2 class="SRTitulo">--------------------------------------- Servicios ---------------------------------------</h2>
+    <div class="ServiciosRoom">
+        <div class="SRpopulares">
+            <h2 class="SRpopTitulo">Mas populares <i class="fi fi-rs-flame"></i></h2>
+            <ul class="SRpop">
+                {{#each serviciosSimulados.[0].servicios}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="SRpopulares">
+            <h2 class="SRpopTitulo">Generales <i class="fi fi-rr-circle-star"></i></h2>
+            <ul class="SRpop">
+                {{#each serviciosSimulados.[1].servicios}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="SRpopulares">
+            <h2 class="SRpopTitulo">No Incluidos <i class="fi fi-ts-circle-quarters-alt"></i></h2>
+            <ul class="SRpop">
+                {{#each serviciosSimulados.[2].servicios}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="btnsSR">
+        <button class="btnSR">Ver todos los servicios</button>
+    </div>
+</section>
+<section class="habitaciones">
+    <h2 class="habiTitulo"></h2>
+    <i class="habi-icon"></i>
+</section>
+
+<div class="abcd">
+    <h1>{{hotel.name}}</h1>
 
 <!-- Mensaje de bienvenida -->
 <p>{{hotel.hostInfo.welcomeMessage}}</p>
@@ -160,4 +215,5 @@
     <img src="{{hotel.images.[2]}}" alt="Imagen del hotel 3" class="hotel-image">
     <img src="{{hotel.images.[3]}}" alt="Imagen del hotel 4" class="hotel-image">
 
+</div>
 </div>

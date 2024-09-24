@@ -1119,7 +1119,7 @@ outline: none;
 
 .serviciosR{
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
     border-bottom: 2px solid #0B97B8;
 }
 
@@ -1132,6 +1132,123 @@ outline: none;
     list-style:none;
     font-size: 22px;
     color: #0B97B8;
+}
+
+.Hname{
+    margin-top: 40px;
+    padding-left: 30px;
+}
+
+.imgsInfo{
+    display: flex;
+    margin-right: 30px;
+}
+
+.imginfo{
+    margin-left: 30px;
+    width: 50%;
+    height: 300px;
+}
+
+.imginfos{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imgsInfo2{
+    margin-left: 10px;
+    width: 50%;  
+}
+
+.imgsInfo3{
+    display: flex;
+    height: 145px;
+}
+
+.imgsInfo4{
+    height: 145px;
+    margin-top: 10px;
+}
+
+.imgsInfo2s{
+    width: 50%;
+    height: 145px;    
+}
+
+.imgsInfo2s2{
+    width: 50%;
+    height: 145px; 
+    margin-left: 5px;   
+}
+
+.DescTitulo{
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.descripcion{
+    width: 96%;
+    margin: 0 auto;
+}
+
+.desc-general{
+    width: 96%;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0px 10px 19px -1px rgba(0,0,0,0.30);
+}
+
+.SRTitulo{
+    margin-top: 40px;
+    text-align: center;
+    color: #0B97B8;
+}
+
+.ServiciosRoom{
+    display: flex;
+    justify-content: space-around;
+}
+
+.SRpopulares{
+    width: 290px;
+    height: 350px;
+    border: #0B97B8 4px solid;
+    padding: 15px 15px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.SRpopTitulo{
+    text-align: center;
+    color: #0B97B8;
+}
+
+.SRpop{
+    margin-top: 15px;
+}
+
+.btnsSR{
+    margin-top:30px;
+    text-align: center;
+}
+
+.btnSR{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0B97B8;
+    color: #fff;
+    border: none;
+}
+
+
+
+
+
+
+.abcd{
+    margin-top: 100px;
 }
 
 

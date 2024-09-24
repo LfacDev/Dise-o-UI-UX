@@ -41,7 +41,6 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-
 //routes
 /* app.get('/', (req, res) => {
     res.render('index',{ showNav: true, showFooter: true })
@@ -134,9 +133,18 @@ app.get('/run-task', async (req, res) => {
 // Ruta para mostrar la lista de hoteles
 app.get('/personas/listHotel', async(req, res) => {
     const hotels = req.session.hotels; // Obtener los datos de la sesión
+    //simular precios 
+    const preciosSimulados = [
+        { plataforma: 'Booking', precio: (Math.random() * (150 - 100) + 100).toFixed(2) },
+        { plataforma: 'Hotels.com', precio: (Math.random() * (140 - 90) + 90).toFixed(2) },
+        { plataforma: 'Priceline', precio: (Math.random() * (160 - 110) + 110).toFixed(2) }
+    ];
+
+
+    console.log(preciosSimulados);
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
         console.log(pais);
-    res.render('personas/listHotel', {showNav: true, showFooter: true, hotels, Hoteles: pais });
+    res.render('personas/listHotel', {showNav: true, showFooter: true, hotels, Hoteles: pais, preciosSimulados});
 });
 
 
@@ -148,9 +156,20 @@ app.get('/personas/RoomsHotel', async (req, res) => {
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
     console.log(pais);
 
+     //simular servicios 
+    
     const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
     if (HotelSeleccionado) {
-        res.render('personas/RoomsHotel', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais });
+
+        const serviciosSimulados = [
+            { categoria: 'Más Populares', servicios: ['Traslado aeropuerto', 'Habitaciones sin humo', 'Adaptado personas de movilidad reducida', 'Parking gratis', 'WiFi gratis', 'Gimnasio', 'Servicio de habitaciones', 'Restaurante', 'Bar', 'Muy buen desayuno'] },
+            { categoria: 'Generales', servicios: ['Artículos de aseo gratis', 'Ducha', 'Caja fuerte', 'WC', 'Suelo de madera o parquet', 'Toallas', 'Ropa de cama', 'Enchufe cerca de la cama', 'Escritorio', 'Entrada privada'] },
+            { categoria: 'No incluidos', servicios: ['Cámaras de seguridad en la parte exterior de la propiedad', 'TV', 'Lavadora', 'Secadora', 'Aire acondicionado', 'Detector de humo', 'Calefacción'] }
+        ];
+
+        console.log(serviciosSimulados);
+
+        res.render('personas/RoomsHotel', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, serviciosSimulados });
     } else {
         res.status(404).send('Hotel no encontrado');
     }
