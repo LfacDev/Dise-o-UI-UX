@@ -174,46 +174,49 @@
             </ul>
         </div>
     </div>
-    <div class="btnsSR">
-        <button class="btnSR">Ver todos los servicios</button>
-    </div>
 </section>
 <section class="habitaciones">
-    <h2 class="habiTitulo"></h2>
-    <i class="habi-icon"></i>
+    <h2 class="habitacionesTitulo">Tipo de Habitaciones</h2>
+    <div class="cont-habitaciones">
+        <div class="cont-habi">
+            <h2 class="habiTitulo">{{habitaciones.[2].Nombre_TipoHabitacion}}</h2>
+            <img class="img-habi" src="../img/cama.png" alt="cama sencilla">
+            <a class="btn-habitaciiones" href="Reservas?id={{hotel.order}}">
+                Reservar Habitacion
+            </a>
+        </div>
+        <div class="cont-habi">
+            <h2 class="habiTitulo">{{habitaciones.[3].Nombre_TipoHabitacion}}</h2>
+            <img class="img-habi" src="../img/habitacion.png" alt="cama sencilla">
+            <button class="btn-habitaciiones">
+                Reservar Habitacion
+            </button>
+        </div>
+        <div class="cont-habi">
+            <h2 class="habiTitulo">{{habitaciones.[4].Nombre_TipoHabitacion}}</h2>
+            <img class="img-habi" src="../img/cama2.png" alt="cama sencilla">
+            <button class="btn-habitaciiones">
+                Reservar Habitacion
+            </button>
+        </div>
+    </div>
+    <div class="cont-habitaciones2">
+        <div class="cont-habi">
+            <h2 class="habiTitulo">{{habitaciones.[5].Nombre_TipoHabitacion}}</h2>
+            <img class="img-habi" src="../img/cama.png" alt="cama sencilla">
+            <button class="btn-habitaciiones">
+                Reservar Habitacion
+            </button>
+        </div>
+        <div class="cont-habi">
+            <h2 class="habiTitulo">{{habitaciones.[6].Nombre_TipoHabitacion}}</h2>
+            <img class="img-habi" src="../img/balcon-antiguo.png" alt="cama sencilla">
+            <button class="btn-habitaciiones">
+                Reservar Habitacion
+            </button>
+        </div>
+        
+    </div>
+    </div>
+    
 </section>
-
-<div class="abcd">
-    <h1>{{hotel.name}}</h1>
-
-<!-- Mensaje de bienvenida -->
-<p>{{hotel.hostInfo.welcomeMessage}}</p>
-
-<p>{{hotel.hostInfo.neighboorhoodInfo}}</p>
-
-
-<!-- Imágenes del hotel -->
-
-
-<h2>Habitaciones</h2>
-<ul>
-    {{#each hotel.rooms}}
-        <li>
-            <h3>{{this.roomType}}</h3>
-            <p>Precio: ${{this.price}}</p>
-            <p>Disponibilidad: {{#if this.available}}Disponible{{else}}No disponible{{/if}}</p>
-            <a href="{{this.url}}" target="_blank">Ver más detalles</a>
-        </li>
-    {{else}}
-        <li>No hay habitaciones disponibles.</li>
-    {{/each}}
-</ul>
-
-<div class="hotel-images"></div>
-        <img src="{{hotel.images.[0]}}" alt="Imagen del hotel 1" class="hotel-image">
-    <img src="{{hotel.images.[1]}}" alt="Imagen del hotel 2" class="hotel-image">
-    <img src="{{hotel.images.[2]}}" alt="Imagen del hotel 3" class="hotel-image">
-    <img src="{{hotel.images.[3]}}" alt="Imagen del hotel 4" class="hotel-image">
-
-</div>
-</div>

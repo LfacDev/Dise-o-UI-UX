@@ -1,0 +1,66 @@
+
+<section class="sectionReserva">
+    <div class="tituloReserva">
+        <h2><i class="fi fi-ts-angle-left"></i> Solicitar Reserva</h2>
+    </div>
+
+    <div class="contenedorReserva">
+        <div class="datosReserva">
+            <div class="mensajePrecio">
+                <h2 class="precioTitulo">¡Buen Precio! <i class="fi fi-tr-badge-percent"></i></h2>
+                <p class="parrafoPrecio">El precio en las fechas que elegiste es $156,289 COP más bajo que la tarifa promedio por noche de los últimos 3 meses.</p>
+            </div>
+            <div class="tuViaje">
+                <h2 class="viajeTitulo">Tu viaje</h2>
+                <div class="llegada-salida">
+                    <div class="llegada">
+                        <h3 class="llegada-text">Entrada</h3>
+                        <h3 class="llegada-fecha">FECHA.RESERVAS</h3>
+                    </div>
+                    <div class="salida">
+                        <h3>Salida</h3>
+                        <h3>FECHA.RESERVAS</h3>
+                    </div>
+                </div>
+            </div>
+                <h2>Has seleccionado</h2>
+                <h4>HABITACIONES.RESERVAS</h4>
+                <button>Cambiar Seleccion</button>
+            <div class="ingresaDatos">
+                <form action="">
+                    <label for="">Nombre</label>
+                    <input type="text">
+                    <label for="">Apellido</label>
+                    <input type="text">
+                    <label for="">Email</label>
+                    <input type="text">
+                    <label for="">Pais/Region</label>
+                    <input type="text">
+                    <label for="">Telefono</label>
+                    <input type="text">
+                </form>
+            </div>
+
+            <div class="tipoPago">
+            </div>
+
+            <div class="datosReserva2">
+            <div class="datosHotel">
+
+            </div>
+            <div class="peticiones">
+
+            </div>
+        </div>
+    </div>
+
+        </div>
+        
+    
+</section>
+
+{{#each reservas}}
+                        <div class="datos-ciudad">
+                            <span class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this}}</span>
+                        </div>
+                        {{/each}}

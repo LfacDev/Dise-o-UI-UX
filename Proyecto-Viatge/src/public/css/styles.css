@@ -1229,17 +1229,97 @@ outline: none;
     margin-top: 15px;
 }
 
-.btnsSR{
-    margin-top:30px;
+.cont-habitaciones{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont-habitaciones2{
+    display: flex;
+    justify-content: center;
+}
+
+.img-habi{
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.cont-habi{
+    border: #F24A87 3px solid;
+    margin: 30px;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.habiTitulo{
+    font-size: 20px;
+}
+
+.btn-habitaciiones{
+    margin-top: 20px;
+    margin-left: 50%;
+    padding: 5px;
+    background-color: #FFC1D8;
+    border: none;
+    border-radius: 10px;
+}
+
+.habitacionesTitulo{
+    margin-top: 40px;
     text-align: center;
 }
 
-.btnSR{
+.contenedorReserva{
+    width: 97%;
+    border: #000 1px solid;
+    display: flex;
+
+}
+
+.datosReserva{
+    border: #000 1px solid;
+    width: 50%;
+}
+
+.mensajePrecio{
+    border-radius: 15px;
+    border: #0B97B8 2px solid;
+    margin: 15px;
     padding: 10px;
-    border-radius: 10px;
-    background-color: #0B97B8;
-    color: #fff;
-    border: none;
+}
+
+.precioTitulo{
+    font-size: 20px;
+}
+
+.parrafoPrecio{
+    font-size: 15px;
+}
+
+.tuViaje{
+    border-radius: 15px;
+    border: #0B97B8 2px solid;
+    margin: 15px;
+    padding: 10px;
+}
+
+.viajeTitulo{
+    margin: 10px 0; 
+    font-size: 20px;
+}
+
+.llegada-salida{
+    display: flex;
+}
+
+.llegada-text{
+    font-size: 17px;
+}
+
+.ingresaDatos{
+    border: #000 1px solid;
 }
 
 

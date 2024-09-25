@@ -108,17 +108,16 @@ app.get('/run-task', async (req, res) => {
         // Extraer parámetros de la URL
         const { checkIn, checkOut, search, adults, children, rooms} = req.query;
 
-        const adultsCount = 1;
-        console.log(adultsCount);
-        const childrenCount = 1;
-        console.log(childrenCount); 
-        const roomsCount = 1; 
-        console.log(roomsCount);
+        const childrenCount = parseInt(children);
+        const adultsCount = parseInt(adults);
+        const roomsCount = parseInt(rooms); 
+
 
         // Pasar los parámetros al scraper
         const scrapedData = await BookingScraper(checkIn, checkOut, search, adultsCount, childrenCount, roomsCount);
          // Guardar los resultados en una sesión
         req.session.hotels = scrapedData;
+        req.session.reservas = {checkIn, checkOut, search, adultsCount, childrenCount, roomsCount}
 
          // Redirigir a la vista 'listHotel'
         res.redirect('/personas/listHotel');
@@ -155,11 +154,38 @@ app.get('/personas/RoomsHotel', async (req, res) => {
     const hotels = req.session.hotels; // Asegúrate de que tienes la lista de hoteles en la sesión
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
     console.log(pais);
+    
 
      //simular servicios 
     
     const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
     if (HotelSeleccionado) {
+        const [habitacion] = await pool.query('SELECT * FROM viatge_bd.tipo_habitacion;');
+        const serviciosSimulados = [
+            { categoria: 'Más Populares', servicios: ['Traslado aeropuerto', 'Habitaciones sin humo', 'Adaptado personas de movilidad reducida', 'Parking gratis', 'WiFi gratis', 'Gimnasio', 'Servicio de habitaciones', 'Restaurante', 'Bar', 'Muy buen desayuno'] },
+            { categoria: 'Generales', servicios: ['Artículos de aseo gratis', 'Ducha', 'Caja fuerte', 'WC', 'Suelo de madera o parquet', 'Toallas', 'Ropa de cama', 'Enchufe cerca de la cama', 'Escritorio', 'Entrada privada'] },
+            { categoria: 'No incluidos', servicios: ['Cámaras de seguridad en la parte exterior de la propiedad', 'TV', 'Lavadora', 'Secadora', 'Aire acondicionado', 'Detector de humo', 'Calefacción'] }
+        ];
+
+        res.render('personas/RoomsHotel', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, serviciosSimulados, habitaciones: habitacion });
+    } else {
+        res.status(404).send('Hotel no encontrado');
+    }
+});
+
+//Reservas
+app.get('/personas/Reservas', async (req, res) => {
+    const hotelId = req.query.id;
+    const hotels = req.session.hotels; // Asegúrate de que tienes la lista de hoteles en la sesión
+    const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
+    const reservas = req.session.reservas;
+    console.log(reservas, 'HOLA');
+     //simular servicios 
+    
+    const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
+    if (HotelSeleccionado) {
+        const [habitacion] = await pool.query('SELECT * FROM viatge_bd.tipo_habitacion;');
+
 
         const serviciosSimulados = [
             { categoria: 'Más Populares', servicios: ['Traslado aeropuerto', 'Habitaciones sin humo', 'Adaptado personas de movilidad reducida', 'Parking gratis', 'WiFi gratis', 'Gimnasio', 'Servicio de habitaciones', 'Restaurante', 'Bar', 'Muy buen desayuno'] },
@@ -167,13 +193,14 @@ app.get('/personas/RoomsHotel', async (req, res) => {
             { categoria: 'No incluidos', servicios: ['Cámaras de seguridad en la parte exterior de la propiedad', 'TV', 'Lavadora', 'Secadora', 'Aire acondicionado', 'Detector de humo', 'Calefacción'] }
         ];
 
-        console.log(serviciosSimulados);
+        
 
-        res.render('personas/RoomsHotel', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, serviciosSimulados });
+        res.render('personas/Reservas', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, serviciosSimulados, habitaciones: habitacion, reservas });
     } else {
         res.status(404).send('Hotel no encontrado');
     }
 });
+
 
 
 //run server
