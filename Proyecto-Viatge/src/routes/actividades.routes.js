@@ -23,7 +23,7 @@ router.get('/buscar_actividades', async(req, res)=>{
                 i.URL_ImagenActividad, 
                 c.Nombre_Ciudad, 
                 u.Direccion_Ubicacion;`);
-            res.render('ActividadesTuristicas/buscar_actividades', {buscarActividad: result});
+            res.render('ActividadesTuristicas/buscar_actividades', {showNav: true, showFooter: true,buscarActividad: result});
             console.log(result);
         }catch(err){
             res.status(500).json({message:err.message});

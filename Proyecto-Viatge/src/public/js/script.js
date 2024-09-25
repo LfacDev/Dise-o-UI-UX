@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    let map = L.map('miMapa').setView([4.631826, -74.080483], 19);
+    let map = L.map('miMapa').setView([4.631826, -74.080483], 12);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -344,8 +344,6 @@ document.addEventListener('DOMContentLoaded', function () {
             .openPopup();
     }
 });
-
-        
 
 
 
