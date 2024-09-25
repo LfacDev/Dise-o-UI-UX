@@ -10,6 +10,8 @@ import pool from './database.js';
 // Importar el cliente de Apify
 import { ApifyClient } from 'apify-client';
 import session from 'express-session';
+// Importar para mensajes 
+
 
 //initializacion
 const app = express();
@@ -41,6 +43,8 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
+
+// Variables Globales 
 
 //routes
 /* app.get('/', (req, res) => {
