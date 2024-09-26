@@ -1,5 +1,6 @@
 import express from 'express'
 import morgan from 'morgan';
+import hbs from 'hbs';
 import { engine } from 'express-handlebars';
 import {join, dirname} from 'path'
 import { fileURLToPath } from 'url';
@@ -44,7 +45,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 
-// Variables Globales 
+// Configurar helper 
 
 //routes
 /* app.get('/personas/test', (req, res) => {
