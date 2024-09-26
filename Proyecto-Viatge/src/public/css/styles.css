@@ -397,7 +397,7 @@ body{
 }
 
 /* MODAL CALENDRIO */
-.modal {
+.modalHotel {
     display: none; 
     position: absolute; 
     z-index: 1; 
@@ -1512,6 +1512,10 @@ outline: none;
     padding: 10px 15px;
     border-radius: 20px;
     text-decoration: none;
+}
+
+.inputCVC{
+    width: 100px;
 }
 
 
