@@ -1,1 +1,69 @@
-<div>Hola</div>
+<main class="main"></main>
+    <div class="container-index">
+        <img class="img-index" src="../img/back-actividad.jpg" alt="Viatge">
+    </div>
+   <div class="busqueda-index flex">
+        <div class="busqueda-item">
+            <h6 class="titulo-item">Destino</h6>
+            <div class="subitem flex">
+                <i class="fi fi-ts-marker icono-index"></i>
+                <h2 class="subtitulo-item">¿Adonde quieres ir?</h2>
+            </div>
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item itemT">Llegada</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-calendar-clock icono-index"></i>
+                <h2 class="subtitulo-item">Dom, 15/09/24</h2>
+            </div>
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item itemT">Salida</h6>
+            <div class="subitem flex">
+                <h2 class="subtitulo-item">Dom, 22/09/24</h2>
+            </div>
+            
+        </div>
+        <div class="busqueda-item">
+            <h6 class="titulo-item">Personas/Habitaciones</h6>
+            <div class="subitem flex">
+                <i class="fi fi-tr-users icono-index"></i>
+                <h2 class="subtitulo-item">3 Huespedes, 1 Habitacion</h2>
+            </div>
+        </div>
+    </div>
+    <div class="btn-buscar">
+        <a class="txt-buscar">Buscar</a>
+    </div>
+
+
+<!-- CONTENIDOOO -->
+
+<section class="container-ver-actividad">
+    <div class="Seccion-principal-actividad">
+        <div class="titulo-container"><h3>{{actividad.Nombre_Actividad}}</h3></div>
+        <div class="actividad-favorito">
+            <form action="/cambioFavorito/{{actividad.ID_ActividadTuristica}}" method="POST" class="actividad-favorito">
+            <button type="submit" style="background: none; border: none; cursor: pointer;">
+                Me interesa
+                {{#if actividad.EsFavorito}}
+                    <img src="/img/favoritoTrue.png" alt="Favorito activado">
+                {{else}}
+                    <img src="/img/favoritoFalse.png" alt="Favorito desactivado">
+                {{/if}}
+            </button>
+        </form>
+        </div>
+        <div class="mini-descripcion"><h4>{{actividad.Descripcion_Mini}}</h4></div>
+        <div class="img-actividad-ver">
+            <img src="/img/imag_Actividades/{{actividad.URL_ImagenActividad}}" alt="{{actividad.URL_ImagenActividad}}">
+        </div>
+        <h3>$ {{actividad.Precio_Actividad}}</h3> <a href="">Reservar</a>
+        <h4>Acerca del Lugar</h4>
+        <p>{{actividad.Descripcion_Actividad}}</p>
+    </div>
+    
+    <div class="seccion-disponibilidad">
+
+    </div>
+</section>
