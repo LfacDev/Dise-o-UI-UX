@@ -19,10 +19,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Configuración de la sesión
 app.use(session({
-    secret: 'tu-secreto-aqui', // Cambia esto a un secreto más seguro
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Cambia a true si usas HTTPS
+    secret: 'mi_secreto',  // Un string para firmar la cookie de sesión
+    resave: false,         // Evita guardar la sesión si no hay cambios
+    saveUninitialized: true, // Guarda nuevas sesiones no modificadas
+    cookie: { maxAge: 3600000 } // Tiempo de vida de la cookie (en este caso 1 hora)
 }));
 
 
@@ -77,7 +77,7 @@ app.use(express.static(join(__dirname, 'public')));
 
 // Inicializar el cliente con el token de API
 const client = new ApifyClient({
-    token: 'apify_api_zQdcXdiP4QYoOtsicWBOsvNjppmaNw3zk9EW', // Sustituye con tu token de Apify
+    token: 'apify_api_hWmuNPR3iBX1oQVov31kvSRcpbEtQN2XPZoL', // Sustituye con tu token de Apify
 });
 
 
@@ -188,23 +188,33 @@ app.get('/personas/Reservas', async (req, res) => {
      //simular servicios 
     
     const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
+    const idHotel = req.session.HotelSeleccionado;
     if (HotelSeleccionado) {
         const [habitacion] = await pool.query('SELECT * FROM viatge_bd.tipo_habitacion;');
 
+        // Cálculo de precios
+        const precioPorHabitacion = 100.000; // Ejemplo de precio por habitación
+        const precioPorAdulto = 50.000;      // Ejemplo de precio por adulto
+        const precioPorNino = 25.000;        // Ejemplo de precio por niño
 
-        const serviciosSimulados = [
-            { categoria: 'Más Populares', servicios: ['Traslado aeropuerto', 'Habitaciones sin humo', 'Adaptado personas de movilidad reducida', 'Parking gratis', 'WiFi gratis', 'Gimnasio', 'Servicio de habitaciones', 'Restaurante', 'Bar', 'Muy buen desayuno'] },
-            { categoria: 'Generales', servicios: ['Artículos de aseo gratis', 'Ducha', 'Caja fuerte', 'WC', 'Suelo de madera o parquet', 'Toallas', 'Ropa de cama', 'Enchufe cerca de la cama', 'Escritorio', 'Entrada privada'] },
-            { categoria: 'No incluidos', servicios: ['Cámaras de seguridad en la parte exterior de la propiedad', 'TV', 'Lavadora', 'Secadora', 'Aire acondicionado', 'Detector de humo', 'Calefacción'] }
-        ];
+        // Accediendo a los datos de reservas
+        const cantidadHabitaciones = reservas.roomsCount; // Por defecto 1 si no está definido
+        const cantidadAdultos = reservas.adultsCount;
+        const cantidadNinos = reservas.childrenCount;
 
+        console.log(cantidadHabitaciones, cantidadAdultos, cantidadNinos);
+
+        // Calcula el precio total
+        const precioTotal = (cantidadHabitaciones * precioPorHabitacion) + (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
         
 
-        res.render('personas/Reservas', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, serviciosSimulados, habitaciones: habitacion, reservas });
+        res.render('personas/Reservas', {showNav: true, showFooter: true, hotel: HotelSeleccionado, Hoteles: pais, habitaciones: habitacion, reservas, precioTotal, idHotel });
     } else {
         res.status(404).send('Hotel no encontrado');
     }
 });
+
+
 
 
 

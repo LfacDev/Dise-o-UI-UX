@@ -8,59 +8,90 @@
         <div class="datosReserva">
             <div class="mensajePrecio">
                 <h2 class="precioTitulo">¡Buen Precio! <i class="fi fi-tr-badge-percent"></i></h2>
-                <p class="parrafoPrecio">El precio en las fechas que elegiste es $156,289 COP más bajo que la tarifa promedio por noche de los últimos 3 meses.</p>
+                <p class="parrafoPrecio">El precio en las fechas que elegiste es $75,848 COP más bajo que la tarifa promedio por noche de los últimos 3 meses.</p>
             </div>
             <div class="tuViaje">
                 <h2 class="viajeTitulo">Tu viaje</h2>
                 <div class="llegada-salida">
                     <div class="llegada">
                         <h3 class="llegada-text">Entrada</h3>
-                        <h3 class="llegada-fecha">FECHA.RESERVAS</h3>
+                        <h3 class="llegada-fecha">{{reservas.checkIn}}</h3>
                     </div>
                     <div class="salida">
-                        <h3>Salida</h3>
-                        <h3>FECHA.RESERVAS</h3>
+                        <h3 class="salida-text">Salida</h3>
+                        <h3 class="salida-fecha">{{reservas.checkOut}}</h3>
+                    </div>
+                </div>
+                <h2 class="text-seleccion">Has seleccionado</h2>
+                <h4 class="habi-seleccion">Habitaciones {{reservas.roomsCount}}, Niños {{reservas.childrenCount}} Adultos {{adultsCount}}</h4>
+                <h4 class="habi-seleccion">Lugar: {{reservas.search}}</h4>
+                <a class="btn-seleccion" href=""><button>Cambiar Seleccion</button></a>
+            </div>
+                
+            <div class="ingresaDatos">
+                <form action="post">
+                    <div class="nombres-form">
+                        <div class="nombres">
+                            <input type="text" id="nombre" name="nombre">
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="nombres">
+                            <input type="text" id="nombre" name="nombre">
+                            <label for="nombre">Apellidos</label>
+                        </div>
+                    </div>
+                    <div class="nombres-form">
+                        <div class="nombres">
+                            <input type="email" id="nombre" name="nombre">
+                            <label for="nombre">Email</label>
+                        </div>
+                        <div class="nombres">
+                            <select class="select-nombres" id="">
+                                <option selected>Seleccione Pais</option>
+                                {{#each Hoteles}}
+                                    <option value="{{this.ID_pais}}">{{this.Nombre_Pais}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nombres-form">
+                        <div class="nombres">
+                            <input type="number" id="nombre" name="nombre">
+                            <label for="nombre">Numero Telefono</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            <div class="tipoPago">
+                <div class="datosReserva2">
+                    <div class="img-tipoPago">
+                        <img class="img-pago" src="{{hotel.images.[1]}}" alt="">
+                    </div>
+                    <div class="textPago">
+                        <h2 class="pagoName">{{hotel.name}}</h2>
+                        <div class="icon-rating">
+                            <h3 class="ratingPago">Calificacion: {{hotel.rating}}</h3>
+                            <h4 class="ratingPago-star">★★★</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont-datosHotel">
+                    <div class="datosHotel">
+                        <h2 class="datos-titulo">Informacion de tu pedido</h2>
+                        <div class="cont-total">
+                            <h2 class="total">Total</h2>
+                            <h3 class="txt-total">COP ${{precioTotal}}</h3>
+                        </div>
+                    </div>
+                    <div class="impuestos">
+                        <i class="fi fi-ts-money-transfer-coin-arrow icon-imp"></i>
+                        <h3 class="txt-impuestos">Incluye impuestos y cargos</h3>
                     </div>
                 </div>
             </div>
-                <h2>Has seleccionado</h2>
-                <h4>HABITACIONES.RESERVAS</h4>
-                <button>Cambiar Seleccion</button>
-            <div class="ingresaDatos">
-                <form action="">
-                    <label for="">Nombre</label>
-                    <input type="text">
-                    <label for="">Apellido</label>
-                    <input type="text">
-                    <label for="">Email</label>
-                    <input type="text">
-                    <label for="">Pais/Region</label>
-                    <input type="text">
-                    <label for="">Telefono</label>
-                    <input type="text">
-                </form>
-            </div>
-
-            <div class="tipoPago">
-            </div>
-
-            <div class="datosReserva2">
-            <div class="datosHotel">
-
-            </div>
-            <div class="peticiones">
-
-            </div>
-        </div>
     </div>
-
-        </div>
-        
+    <a class="btn-reserva" href="">Reservar</a>
     
 </section>
-
-{{#each reservas}}
-                        <div class="datos-ciudad">
-                            <span class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this}}</span>
-                        </div>
-                        {{/each}}
