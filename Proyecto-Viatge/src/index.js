@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import { engine } from 'express-handlebars';
 import {join, dirname} from 'path'
 import { fileURLToPath } from 'url';
-import personasRoutes from './routes/personas.routes.js'
+import personasRoutes from './routes/reservas.routes.js'
 import usuariosRoutes from './routes/usuarios.routes.js'
 import actividadesRoutes from './routes/actividades.routes.js'
 import pool from './database.js';
@@ -47,8 +47,8 @@ app.use(express.json());
 // Variables Globales 
 
 //routes
-/* app.get('/', (req, res) => {
-    res.render('index',{ showNav: true, showFooter: true })
+/* app.get('/personas/test', (req, res) => {
+    res.render('personas/test',{ showNav: true, showFooter: true })
 }); */
 
 
@@ -135,7 +135,7 @@ app.get('/run-task', async (req, res) => {
 });
 
 // Ruta para mostrar la lista de hoteles
-app.get('/personas/listHotel', async(req, res) => {
+/* app.get('/personas/listHotel', async(req, res) => {
     const hotels = req.session.hotels; // Obtener los datos de la sesión
     //simular precios 
     const preciosSimulados = [
@@ -149,12 +149,12 @@ app.get('/personas/listHotel', async(req, res) => {
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
         console.log(pais);
     res.render('personas/listHotel', {showNav: true, showFooter: true, hotels, Hoteles: pais, preciosSimulados});
-});
+}); */
 
 
 
 //Ruta para mostrar las habitaciones del Hotel
-app.get('/personas/RoomsHotel', async (req, res) => {
+/* app.get('/personas/RoomsHotel', async (req, res) => {
     const hotelId = req.query.id;
     const hotels = req.session.hotels; // Asegúrate de que tienes la lista de hoteles en la sesión
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
@@ -176,10 +176,10 @@ app.get('/personas/RoomsHotel', async (req, res) => {
     } else {
         res.status(404).send('Hotel no encontrado');
     }
-});
+}); */
 
 //Reservas
-app.get('/personas/Reservas', async (req, res) => {
+/* app.get('/personas/Reservas', async (req, res) => {
     const hotelId = req.query.id;
     const hotels = req.session.hotels; // Asegúrate de que tienes la lista de hoteles en la sesión
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
@@ -212,7 +212,7 @@ app.get('/personas/Reservas', async (req, res) => {
     } else {
         res.status(404).send('Hotel no encontrado');
     }
-});
+}); */
 
 
 
