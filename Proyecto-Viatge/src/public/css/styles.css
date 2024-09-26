@@ -1271,19 +1271,22 @@ outline: none;
     text-align: center;
 }
 
-.contenedorReserva{
-    width: 97%;
-    border: #000 1px solid;
-    display: flex;
+.tituloReserva{
+    margin:20px 15px;
+    color: #0B97B8;
+}
 
+.contenedorReserva{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
 }
 
 .datosReserva{
-    border: #000 1px solid;
-    width: 50%;
+    width: 40%;
 }
 
-.mensajePrecio{
+.mensajePrecio, .ingresaDatos{
     border-radius: 15px;
     border: #0B97B8 2px solid;
     margin: 15px;
@@ -1311,16 +1314,215 @@ outline: none;
 }
 
 .llegada-salida{
+    padding-left:50px ;
     display: flex;
+    border-bottom: 2px solid #0B97B8;
+    flex-wrap: wrap;
+    gap: 80px;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.llegada-text{
+.llegada-text, .salida-text{
     font-size: 17px;
 }
 
-.ingresaDatos{
-    border: #000 1px solid;
+
+.llegada, .salida{
+    margin: 5px;
 }
+
+
+.salida-fecha, .llegada-fecha{
+    font-size: 15px;
+}
+
+
+.text-seleccion, .habi-seleccion{
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+
+.btn-seleccion{
+    margin-left: 300px;
+}
+
+
+.btn-seleccion button{
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    background-color: #0B97B8;
+    font-size: 13px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.nombres-form{
+    display: flex;
+    margin: 10px;
+}
+
+.nombres{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.select-nombres{
+    padding: 5px;
+    width: 200px;
+    border: #0B97B8 solid 1px;
+    border-radius: 10px;
+}
+
+.nombres input{
+    border-radius: 10px;
+    border: #0B97B8 solid 1px;
+}
+
+.nombres input:focus{
+    outline: none; 
+    border: none;
+    border: #0B97B8 solid 1px;
+}
+
+.tipoPago{
+    margin-top: 50px;
+    width: 90%;
+}
+
+.img-tipoPago{
+    height: 250px;
+}
+
+.img-pago{
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: #fff 3px solid;
+}
+
+.pagoName{
+    margin-top: 10px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+
+.txt-pago{
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.icon-rating{
+    display: flex;
+}
+
+.icon-rating img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+.icon-rating{
+    margin-top: 5px;
+    gap: 10px;
+    color: #0000007c;
+}
+
+.ratingPago{
+    font-size: 16px;
+    text-align: center;
+    align-content: center;
+}
+
+.ratingPago-star{
+    font-size: 23px;
+    text-align: center;
+    color: orange;
+    align-content: center;
+}
+
+.datos-titulo{
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cont-datosHotel{
+    margin-top: 15px;
+    border-radius: 15px;
+    border: #0B97B8 solid 2px;
+}
+
+.datosHotel{
+    padding: 15px;
+}
+
+.cont-total{
+    border: #0B97B8 2px solid;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.total{
+    border: #0B97B8 2px solid;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.txt-total{
+    margin: 0;
+    padding: 10px;
+    font-size: 35px;
+}
+
+.impuestos{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-imp{
+    font-size: 45px;
+}
+
+.txt-impuestos{
+    font-size: 20px;
+    align-self: center;
+}
+
+.btn-reserva{
+    margin: 0 auto;
+    width: 150px;
+    display: flex;
+    background-color: #0B97B8;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

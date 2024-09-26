@@ -13,6 +13,8 @@ let fechafin = null;
 const ciudad = document.getElementById('dropdownBuscar');
 const dropContenido = document.getElementById('dropContenido');
 
+//TOTAL
+
 //HUESPED/HABITACIONES
 let abrirHuesped = document.getElementById("abrir-huesped");
 let huespedModal = document.getElementById("huespedModal");
@@ -344,6 +346,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .openPopup();
     }
 });
+
+
 
 
 
