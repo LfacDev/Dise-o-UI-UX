@@ -348,37 +348,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* DATOS RESERVA TABLA */
-
-document.querySelectorAll('.ciudad').forEach(item => {
-    item.addEventListener('click', function() {
-        const ciudadSeleccionada = this.innerText; // Obtén el nombre de la ciudad seleccionada
-        const idCiudad = this.getAttribute('data-id-ciudad'); // Obtén el ID de la ciudad
-        const idPais = this.getAttribute('data-id-pais'); // Obtén el ID del país
-
-        console.log('Ciudad seleccionada:', ciudadSeleccionada);
-        console.log('ID Ciudad:', idCiudad);
-        console.log('ID País:', idPais);
-
-        // Enviar los datos al servidor (usando fetch)
-        fetch('/personas/RoomsHotel', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                idCiudad: idCiudad,
-                idPais: idPais
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Respuesta del servidor:', data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
+document.addEventListener('DOMContentLoaded', () => {
+    // Espera a que el contenido del DOM esté completamente cargado
+    document.getElementById('btn-reservar').addEventListener('click', async () => {
+        // Agrega un listener para el botón "Reservar"
+        Swal.fire({
+            title: "Reserva Exitosa!",
+            text: "Tu pago ha sido realizado!",
+            icon: "success"
         });
     });
 });
+
 
 
 
