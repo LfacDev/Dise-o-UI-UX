@@ -92,6 +92,77 @@
                 </div>
             </div>
     </div>
-    <a class="btn-reserva" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">Reservar</a>
+    <a class="btn-reserva" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#">Reservar</a>
 </section>
+
+<!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Pago</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="nombres-form">
+                    <div class="nombres">
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="nombre">Nombre Titular</label>
+                    </div>
+                    <div class="nombres">
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="nombre">Apellidos Titular</label>
+                    </div>
+                </div>
+                <div class="nombres-form">
+                    <div class="nombres">
+                        <select class="select-nombres" id="" required>
+                            <option selected>-- Seleccione Tarjeta --</option>
+                            <option value="1">Visa</option>
+                            <option value="1">Dinners Club</option>
+                            <option value="1">American Express</option>
+                        </select>
+                    </div>
+                    <div class="nombres">
+                        <input type="number" id="nombre" name="nombre" required>
+                        <label for="nombre">Numero de tarjeta</label>
+                    </div>
+                </div>
+                <div class="nombres-form">
+                    <div class="nombres">
+                        <select class="select-nombres" id="" required>
+                            <option selected>-- Seleccione Año --</option>
+                            <option value="1">01-Ene</option>
+                            <option value="1">02-Feb</option>
+                            <option value="1">03-Mar</option>
+                            <option value="1">04-Abr</option>
+                            <option value="1">05-May</option>
+                            <option value="1">06-Jun</option>
+                            <option value="1">07-Jul</option>
+                            <option value="1">08-Ago</option>
+                            <option value="1">09-Sep</option>
+                            <option value="1">10-Oct</option>
+                            <option value="1">11-Nov</option>
+                            <option value="1">12-Dic</option>
+                        </select>
+                    </div>
+                    <div class="nombres">
+                        <input type="number" id="nombre" name="nombre" value="2024" required>
+                        <label for="nombre">Año</label>
+                    </div>
+                </div>
+                <div class="nombres-form">
+                    <div class="nombres">
+                        <input class="inputCVC" type="number" id="nombre" name="nombre" value="" required>
+                        <label for="nombre">CVC</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Confirmar</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
