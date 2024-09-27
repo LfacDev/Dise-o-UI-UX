@@ -87,7 +87,7 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
         const verActividad = actividad[0];
         const [fechas] = await pool.query('call VerDispoibilidadActividad(?)', [IDActividad]);    
 
-        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas: fechas});
+        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas});
         console.log(actividad);
         console.log(fechas);
     } catch (err) {

@@ -1526,7 +1526,7 @@ outline: none;
 .container-ver-actividad{
     width: 95%;
     margin: auto;
-    margin-top: -60px;
+    margin-top: 10px;
 }
 .Seccion-principal-actividad{
     display: flex;
