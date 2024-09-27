@@ -1642,6 +1642,109 @@ outline: none;
 .hora-tarjeta{
     color: #000 ;
 }
+/*_______________ FAVORITO ___________________*/
+
+.titulo-favorito{
+    text-align: center;
+    margin: 30px;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.content-carts-favorito{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin: 0 auto;
+}
+.carts-favorito{
+    display: flex;
+    background-color: #F7F9FC;
+    width: 27%;
+    height: 500px;
+    border: #00A4BD 2px solid;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.actividad-favorito-favorito img{
+    width: 30px;
+    height:30px;
+}
+.foto-favorito{
+    width: 300px ;
+    height: 200px ;
+    border-radius: 5%;
+    box-shadow:1px 1px 4px 1px #000;
+    margin: 10px;
+    border: #E3EBF3 1px solid;
+    justify-content: center;
+    justify-items: center;
+
+}
+.container-descripcion-favorito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.actividad-favorito-favorito{
+    background-color: #F24A87;
+    font-size: 15px;
+    height: 30px;
+    width:140px ;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    align-items: end;
+}
+.container-text-favorito{
+    width: 100%;
+}
+.favorito-title{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+.estrella-im-favorito{
+    width: 60px;
+    height: 60px;
+    margin: 3px 0px 20px 0px ;
+
+}
+.calificacion-estrella-favorito{
+    position: relative;
+    display: inline-block;
+    text-align: center; 
+}
+.calificacion-valor-favorito {
+    font-size: 20px;
+    color: #000;
+    position: absolute; /* Coloca el texto en posición absoluta */
+    top: 17px; /* Ajusta según sea necesario para alinearlo en el centro */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el texto para que esté realmente centrado */
+    z-index: 1; /* Asegura que el texto esté por encima de la estrella */
+}
+.call-on-favorito{
+    margin-top: 7px;
+    margin-left: 70px;
+}
+.boton-call-on-favorito{
+    text-decoration: none;
+    text-align: center;
+    background-color: #00A4BD;
+    color: #F7F9FC;
+    padding: 7px;
+    border-radius: 5px;
+    margin-left: -60px;
+} 
+.ubicacion-favorito{
+    margin-left: 10px;
+}
+
 
 
 

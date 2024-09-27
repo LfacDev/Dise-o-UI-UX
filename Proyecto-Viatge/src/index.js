@@ -4,9 +4,10 @@ import hbs from 'hbs';
 import { engine } from 'express-handlebars';
 import {join, dirname} from 'path'
 import { fileURLToPath } from 'url';
-import personasRoutes from './routes/reservas.routes.js'
-import usuariosRoutes from './routes/usuarios.routes.js'
-import actividadesRoutes from './routes/actividades.routes.js'
+import personasRoutes from './routes/reservas.routes.js';
+import usuariosRoutes from './routes/usuarios.routes.js';
+import actividadesRoutes from './routes/actividades.routes.js';
+import favoritosRoutes from './routes/favoritos.routes.js'
 import pool from './database.js';
 // Importar el cliente de Apify
 import { ApifyClient } from 'apify-client';
@@ -69,6 +70,7 @@ app.get('/', async(req, res)=>{
 app.use(personasRoutes);
 app.use(usuariosRoutes);
 app.use(actividadesRoutes);
+app.use(favoritosRoutes);
 
 //public files
 app.use(express.static(join(__dirname, 'public')));
