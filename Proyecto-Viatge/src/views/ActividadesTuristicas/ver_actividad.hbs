@@ -33,27 +33,27 @@
     </div>
 
     <h2>Fechas Disponibles</h2>
-    <div class="seccion-disponibilidad">
-        
-        {{#if fechas}}
+        <div class="seccion-disponibilidad">
+            {{#if fechas}}
             {{#each fechas.[0]}}
+            <div class="tarjeta">
                 <div class="cuerpo-card">
-                    <div class="encabezado"><h3>{{this.mes}} {{dia}}</h3></div>
+                    <div class="encabezado"><h3>{{mes}} {{dia}}</h3></div>
                     <div class="cuerpo">
-                        <h5>{{año}}</h5>
-                        <h1>{{hora}}</h1>
+                        <h5 class="año-tarjeta">{{año}}</h5>
+                        <h1 class="hora-tarjeta">{{hora}}</h1>
                     </div>
                 </div>
-                {{/each}}
-        {{else}}
-
-       <div class="cuerpo-card"></div>
-            <div class="encabezado"><h3>No hay disponibilidad</h3></div>
-            <div class="cuerpo">
-                <img src="/img/no-disponibilidad.png" alt="no hay disponibilidad">
             </div>
+                {{/each}}
         </div>
+        {{else}}
+            <div class="no-disponibilidad">
+                    <div class="text-no"><h3>No hay disponibilidad</h3></div>
+                    <div class="cuerpo-no">
+                        <img src="/img/no-disponibilidad.png" alt="no hay disponibilidad">
+                    </div>
+            </div>   
         {{/if}}
 
-    </div>
 </div>

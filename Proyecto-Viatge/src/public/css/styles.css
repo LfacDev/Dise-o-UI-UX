@@ -789,7 +789,17 @@ outline: none;
 }
 
 /*__________________ SECCIÓN ACTIVIDADES TURISTICAS ____________________*/
+.titulo-actividades{
+    text-align: center;
+    margin: 30px;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 .content-carts{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1606,6 +1616,31 @@ outline: none;
     font-weight: 300;
     font-style: normal;
     text-align: justify;
+}
+.seccion-disponibilidad{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tarjeta{
+    display: flex;
+    border: #F24A87 2px solid;
+    margin: 5px;
+    width:250px ;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+.año-tarjeta{
+    text-align: center;
+}
+.encabezado{
+    color: white;
+    background-color: #F24A87;
+    text-align: center;
+}
+.hora-tarjeta{
+    color: #000 ;
 }
 
 
