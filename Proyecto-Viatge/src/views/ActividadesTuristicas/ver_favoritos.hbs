@@ -1,0 +1,31 @@
+<h1 class="titulo-favorito">Mis Favoritos</h1>
+   <div class="content-carts-favorito">
+    {{#each favoritos}}
+        <div class="carts-favorito">
+            <img class="foto-favorito" src="/img/imag_Actividades/{{URL_ImagenActividad}}" alt="Foto Actividad {{Nombre_Actividad}}">
+            <div class="container-descripcion-favorito">
+                <div class="actividad-favorito-favorito">
+                        <form action="/Favoritocambia/{{ID_ActividadTuristica}}" method="POST" class="actividad-favorito-favorito">
+                            <button type="submit" style="background: none; border: none; cursor: pointer;">
+                                Me interesa
+                                {{#if EsFavorito}}
+                                    <img src="/img/favoritoTrue.png" alt="Favorito activado">
+                                {{else}}
+                                    <img src="/img/favoritoFalse.png" alt="Favorito desactivado">
+                                {{/if}}
+                            </button>
+                        </form>
+                </div>
+            
+                <div class="container-text-favorito"><h4 class="favorito-title">{{Nombre_Actividad}}</h4></div>
+                <div class="calificacion-estrella-favorito">
+                    <img class="estrella-im-favorito" src="img/estrella (1).png" alt=""><span class="calificacion-valor-favorito">{{Calificacion}}</span>
+                </div>
+                <div class="ubicacion-favorito"><i class="fa-solid fa-location-dot"></i> {{Nombre_Ciudad}}, {{Nombre_Pais}}</div>
+                <div class="call-on-favorito">
+                    <a class="boton-call-on-favorito" href="/ver_actividad/{{IDActividad}}">Ver Actividad</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+   </div>

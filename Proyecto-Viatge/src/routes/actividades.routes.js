@@ -87,12 +87,7 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
     d.Disponible;`,[IDActividad]);
         const verActividad = actividad[0];
         const [fechas] = await pool.query('call VerDispoibilidadActividad(?)', [IDActividad]);    
-
-        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas});
-        console.log(actividad);
-        console.log(fechas);
-        console.log("--------------")
-        console.log(fechas);
+        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas: fechas});
     } catch (err) {
         res.status(500).json({message:err.message});
     }
