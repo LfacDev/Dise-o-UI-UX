@@ -1,5 +1,5 @@
 import { Router } from "express";
-import pool from '../database.js'
+import pool from '../database.js';
 
 const router = Router();
 
@@ -25,4 +25,7 @@ router.post('/registrar_usuario', async(req, res)=>{
         res.status(500).json({message:err.message});
     }
 });
+
+
+
 export default router;
