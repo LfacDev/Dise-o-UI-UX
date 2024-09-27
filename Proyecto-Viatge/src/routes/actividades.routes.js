@@ -1,5 +1,6 @@
 import { Router } from "express";
 import pool from '../database.js'
+import { Console } from "console";
 
 const router = Router();
 
@@ -89,6 +90,8 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
 
         res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas});
         console.log(actividad);
+        console.log(fechas);
+        console.log("--------------")
         console.log(fechas);
     } catch (err) {
         res.status(500).json({message:err.message});

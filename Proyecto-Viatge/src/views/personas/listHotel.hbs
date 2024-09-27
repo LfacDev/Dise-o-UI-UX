@@ -12,7 +12,7 @@
                     <div id="dropContenido" class="dropdown-content">
                         {{#each Hoteles}}
                         <div class="datos-ciudad">
-                            <span class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this.Nombre_Ciudad}}, {{this.Nombre_Pais}}</span>
+                            <span data-id-ciudad="{{this.ID_Ciudad}}" data-id-pais="{{this.ID_Pais}}" name="ciudadSeleccionada" class="ciudad"><i class="fi fi-ts-marker icono-drop"></i>{{this.Nombre_Ciudad}}, {{this.Nombre_Pais}}</span>
                         </div>
                         {{/each}}
                     </div>

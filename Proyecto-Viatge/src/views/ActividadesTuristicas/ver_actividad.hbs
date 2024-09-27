@@ -36,9 +36,9 @@
     <div class="seccion-disponibilidad">
         
         {{#if fechas}}
-            {{#each fechas}}
+            {{#each fechas.[0]}}
                 <div class="cuerpo-card">
-                    <div class="encabezado"><h3>{{mes}} {{dia}}</h3></div>
+                    <div class="encabezado"><h3>{{this.mes}} {{dia}}</h3></div>
                     <div class="cuerpo">
                         <h5>{{año}}</h5>
                         <h1>{{hora}}</h1>

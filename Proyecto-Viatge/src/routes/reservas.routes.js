@@ -34,12 +34,42 @@ router.get('/personas/RoomsHotel', async (req, res) => {
     const [pais] = await pool.query('SELECT c.ID_Ciudad, c.Nombre_Ciudad, p.Nombre_Pais FROM ciudad c JOIN pais p ON c.FK_Pais = p.ID_Pais;');
     console.log(pais);
     
-
-     //simular servicios 
     
     const HotelSeleccionado = hotels.find(hotel => hotel.order == hotelId);
     if (HotelSeleccionado) {
         const [habitacion] = await pool.query('SELECT * FROM viatge_bd.tipo_habitacion;');
+
+        const { idCiudad, idPais } = req.body;
+        console.log(idCiudad, idPais);
+        
+        /* const [insertResult] = await pool.query(`
+            INSERT INTO ubicacion (Direccion_Ubicacion, Latitud_Ubicacion, Longitud_Ubicacion, FK_Ciudad) 
+            VALUES (?, ?, ?, ?)`, [
+            HotelSeleccionado.address,  // Dirección del hotel
+            HotelSeleccionado.latitude, // Latitud del hotel
+            HotelSeleccionado.longitude, // Longitud del hotel
+            HotelSeleccionado.cityId     // ID de la ciudad (debes tener este dato)
+        ]);
+
+        ubicacionId = insertResult.insertId; // Obtener el ID de la ubicación insertada
+        console.log('Ubicación guardada en la base de datos.'); */
+
+
+        /* await pool.query(`
+            INSERT INTO hotel (Nombre_Hotel, Descripcion_Hotel, Imagen_Hotel, FK_TipoHotel, FK_Ubicacion) 
+            VALUES (?, ?, ?, ?, ?, ?)
+        `, [
+            HotelSeleccionado.name,      // Nombre del hotel
+            HotelSeleccionado.address,   // Dirección
+            HotelSeleccionado.city,      // Ciudad (debes tener este dato)
+            HotelSeleccionado.country,   // País (debes tener este dato)
+            HotelSeleccionado.stars,     // Estrellas (opcional, si lo tienes)
+            HotelSeleccionado.price      // Precio (opcional, si lo tienes)
+        ]);
+        console.log('Hotel guardado en la base de datos.'); */
+
+
+
         const serviciosSimulados = [
             { categoria: 'Más Populares', servicios: ['Traslado aeropuerto', 'Habitaciones sin humo', 'Adaptado personas de movilidad reducida', 'Parking gratis', 'WiFi gratis', 'Gimnasio', 'Servicio de habitaciones', 'Restaurante', 'Bar', 'Muy buen desayuno'] },
             { categoria: 'Generales', servicios: ['Artículos de aseo gratis', 'Ducha', 'Caja fuerte', 'WC', 'Suelo de madera o parquet', 'Toallas', 'Ropa de cama', 'Enchufe cerca de la cama', 'Escritorio', 'Entrada privada'] },
