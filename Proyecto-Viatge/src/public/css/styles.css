@@ -1513,24 +1513,94 @@ outline: none;
     border-radius: 20px;
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .abcd{
     margin-top: 100px;
+}
+
+/*__________________ ACTIVIDADES INDIVIDUAL _________________*/
+.container-ver-actividad{
+    width: 95%;
+    margin: auto;
+    margin-top: -60px;
+}
+.Seccion-principal-actividad{
+    display: flex;
+    flex-direction: column;
+}
+.encabezado-principal{
+    display: flex;
+    flex-direction: row;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.encabezado-principal h3{
+    font-size: 50px;
+}
+.actividad-favorito img{
+    width: 50px;
+    height:50px;
+}
+.actividad-favorito{
+    background-color: #F24A87;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.mini-descripcion{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #00A4BD;
+}
+.img-actividad-ver img{
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 1px 1px 5px 1px #000;
+}
+.reservar-actividad{
+    display: inline;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.precio{
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: inline;
+    margin-left: 10px;
+    color: #F24A87;
+}
+.reservar-actividad a{
+    display: inline;
+    margin-left: 70%;
+    text-decoration: none;
+    font-size: 30px;
+    color: #FFFFFF;
+    background-color: #0B97B8;
+    padding: 10px;
+    border-radius: 10px;
+}
+.container-ver-actividad h2{
+    font-size: 40px;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.container-ver-actividad p{
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: justify;
 }
 
 

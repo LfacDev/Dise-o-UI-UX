@@ -36,11 +36,16 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
     try {
         const {IDActividad} = req.params;
         const[actividad] = await pool.query(`SELECT 
+    d.FK_ActividadTuristica,
 	a.ID_ActividadTuristica,
     a.Nombre_Actividad,  
     a.Descripcion_Actividad, 
     a.Precio_Actividad, 
-    f.fecha,
+    a.Descripcion_Mini,
+    f.año,
+    f.mes,
+    f.dia,
+    f.hora,
     d.Disponible,
     t.Nombre_TipoActividadTur, 
     p.Nombre_Pais, 
@@ -62,6 +67,7 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
     LEFT JOIN fechas_disponibles f ON d.FK_FechaDisp = f.ID_FechaDisp
     WHERE a.ID_ActividadTuristica = ?
     GROUP BY 
+    d.FK_ActividadTuristica,
     a.ID_ActividadTuristica, 
     a.Nombre_Actividad, 
     a.Descripcion_Actividad, 
@@ -72,12 +78,18 @@ router.get('/ver_actividad/:IDActividad', async(req, res)=>{
     c.Nombre_Ciudad, 
     u.Direccion_Ubicacion,
     a.EsFavorito,
-    f.fecha,
+    f.año,
+    f.mes,
+    f.dia,
+    f.hora,
     op.Comentario,
     d.Disponible;`,[IDActividad]);
         const verActividad = actividad[0];
-        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad});
+        const [fechas] = await pool.query('call VerDispoibilidadActividad(?)', [IDActividad]);    
+
+        res.render('ActividadesTuristicas/ver_actividad', {showNav:true, showFooter:true, actividad: verActividad, fechas: fechas});
         console.log(actividad);
+        console.log(fechas);
     } catch (err) {
         res.status(500).json({message:err.message});
     }
