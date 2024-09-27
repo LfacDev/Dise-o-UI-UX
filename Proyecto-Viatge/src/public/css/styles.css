@@ -111,6 +111,7 @@ body{
  } 
   
 .dropdown-content {
+    max-height: 300px;
     display: none;
     position: absolute;
     width: 300px;
@@ -721,6 +722,7 @@ outline: none;
     flex-direction: row;
 }
 .im-login{
+    display: flex;
     height: 500px;
     width: 570px;
     background: #F24A87;
@@ -1015,7 +1017,7 @@ outline: none;
     
 }
 
-.precio{
+.precioLista{
     font-size: 13px;
     align-content: center;
     margin: 0;
@@ -1745,6 +1747,12 @@ outline: none;
     margin-left: 10px;
 }
 
+
+.form-login{
+    width: 300px;
+    margin-left: 120px;
+    margin-top: 80px;
+}
 
 
 
