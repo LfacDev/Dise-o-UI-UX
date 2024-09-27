@@ -47,6 +47,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 
+
+
 // Configurar helper 
 
 //routes
