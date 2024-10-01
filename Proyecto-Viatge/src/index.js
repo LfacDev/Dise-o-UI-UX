@@ -97,7 +97,7 @@ async function BookingScraper(checkIn, checkOut, search, adults, children, rooms
             children: children,
             currency: "COP",
             language: "es",
-            maxItems: 10,
+            maxItems: 5,
             minMaxPrice: "0-999999",
             rooms: rooms,
             search: search,

@@ -1276,6 +1276,8 @@ outline: none;
     background-color: #FFC1D8;
     border: none;
     border-radius: 10px;
+    text-decoration: none;
+    color: #F24A87;
 }
 
 .habitacionesTitulo{
